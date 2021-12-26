@@ -1,19 +1,43 @@
-import React from 'react'
-import { Link } from 'gatsby'
+import React from "react"
+import styled from "styled-components"
+import Burger from "./Burger"
+import { useState } from "react"
+import { StaticImage } from "gatsby-plugin-image"
 
-import "./navbar.css"
+import './navbar.css'
 
+const Nav = styled.nav`
+  width: 100%;
+  height: 55px;
+  transition: background .3s ease-in-out;
+  padding: 30px 20px;
+  top: 0px;
+  z-index: 2;
+  display: flex;
+  position: fixed;
+  justify-content: space-between;
+  .logo {
+    width: 4.6rem;
+    margin-top: -22px;
+  }
+`
 const Navbar = () => {
-    return (
-        <nav className='Navbar'>
-            <ul className='Navbar__ul'>
-                <li className='Navbar__ul__li'>Εκκλησία</li>
-                <li className='Navbar__ul__li'>Αίθουσα</li>
-                <li className='Navbar__ul__li'>Εξωτερικός Χώρος</li>
-                <li className='Navbar__ul__li'>Contact Us</li>
-            </ul>
-        </nav>
-    )
+  const [colorChange, setColorchange] = useState(false)
+  const changeNavbarColor = () =>  window.scrollY >= 80 ? setColorchange(true) : setColorchange(false)
+
+  window.addEventListener("scroll", changeNavbarColor)
+  return (
+    <Nav className={colorChange ? "bg-dark" : "bg-transp"}>
+      <div className="logo">
+        <StaticImage
+          src={"../static/naias-logo-golden.png"}
+          alt="Kthma Naias logo"
+          formats={["auto", "webp", "avif"]}
+        />
+      </div>
+      <Burger />
+    </Nav>
+  )
 }
 
 export default Navbar
