@@ -44,53 +44,113 @@
   width: 100%;
   top: 0;
   left: 0;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.3);
   position: absolute;
 }
 
 .showcase_content__undertext {
   font-family: "Lato", sans-serif;
   font-size: 1.2rem;
+  position: absolute;
+  width: 100%;
+  margin-top: 1rem;
+  left: 50%;
+  color: white;
+  transform: translate(-50%, -50%);
 }
 
 .showcase_content__logo {
-  font-family: "Playfair Display", serif;
-  font-weight: 300;
   line-height: 1.2;
-  margin-bottom: .5rem;
+  margin-bottom: 0.5rem;
 }
 
 /* ////////////////////////// */
 /*  DREAM IT */
-.Dream-it__clouds{
-    object-fit: cover;
-    position: absolute;
-    width: 100%;
-    margin-top: -7rem;
-}
 /* height:100vh;
     width: 100%;
     background-position:center;
     background-repeat: no-repeat;
     background-size: cover;
    background-attachment: fixed; */
-.Dream-it{
-    /* padding-top: 4rem;
+.Dream-it {
+  /* padding-top: 4rem;
     padding-bottom: 150rem; */
-    /* background: radial-gradient(circle, rgba(22,22,22,0.19681375968356096) 0%, rgba(40,40,40,0.7122199221485469) 100%), url("../static/cupcakes.jpg") no-repeat center center/cover, rgb(249,225,168); */
-    /* color: white; */
-    /* background-color: rgb(249,225,168); */
-    background-color: rgb(236, 236, 236);
-    display: flex;
-    position: absolute;
-    justify-content: center;
-    z-index: -1;
-    margin-top: -7rem;
-    width: 100%;
-    height: 50rem;
+  /* background: radial-gradient(circle, rgba(22,22,22,0.19681375968356096) 0%, rgba(40,40,40,0.7122199221485469) 100%), url("../static/cupcakes.jpg") no-repeat center center/cover, rgb(249,225,168); */
+  /* color: white; */
+  /* background-color: rgb(249,225,168); */
+  background-color: rgb(236, 236, 236);
+  display: block;
+  position: absolute;
+  z-index: -1;
+  margin-top: -7rem;
+  width: 100%;
+  height: 39rem;
 }
 
-.Dream-it__title{
-    font-family: "Playfair Display", serif;
-    margin-top: 6rem;
+.content__subtitle {
+  margin-bottom: 0.15rem;
+}
+
+.Dream-it__title {
+  font-family: "Playfair Display", serif;
+  display: flex;
+  font-size: 2.9rem;
+  justify-self: center;
+}
+
+.Dream-it__content {
+  margin-top: 6rem;
+  margin-left: 2rem;
+  margin-right: 2rem;
+}
+
+.Dream-it__content__imgs {
+  position: relative;
+  margin-top: 3rem;
+}
+
+/* .responsive-img{
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+  line-height: 0;
+} */
+
+.responsive-img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.Dream-it__content__cupcakes {
+  top: 120px;
+  position: absolute;
+  width: 12rem;
+}
+
+.Dream-it__content__ring {
+  width: 13.5rem;
+  left: 50px;
+  top: 0;
+  position: absolute;
+}
+
+/* ////////////////////////// */
+/*  LIVE IT */
+
+.Live-it {
+  position: relative;
+  margin-top: 29.5rem;
+  width: 100%;
+  background-color: #bf9b55;
+  text-align: center;
+  padding-top: 10rem;
+  z-index: -2;
+  color: white;
+}
+
+.Live-it__title {
+  font-family: "Playfair Display", serif;
+  font-size: 2.9rem;
+  margin: 0 2rem;
 }
