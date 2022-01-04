@@ -18,7 +18,7 @@ const Nav = styled.nav`
   justify-content: space-between;
   .logo {
     width: 4.6rem;
-    margin-top: -22px;
+    margin-top: -18px;
   }
 `
 const Navbar = () => {

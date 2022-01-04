@@ -4,6 +4,19 @@ html{
   scroll-behavior: smooth;
 }
 
+:root{
+  --primary-color: #bf9b55;
+  --primary-lighter-color: #ebb45d;
+  --secondary-color: #d4c3b8;
+  --white-color: rgb(247, 247, 247);
+  --grey-color: rgb(94, 94, 94);
+  --black-color: rgb(38, 38, 38);
+  --title-font: "Playfair Display", serif;
+  --secondary-title-font: "Lato", serif;
+  --greek-title-font: "Manrope", sans-serif;
+}
+
+
 ::-webkit-scrollbar {
   display: none;
   width: 0.6rem;
@@ -34,6 +47,35 @@ a:active {
 }
 
 a:hover {
-  color: rgb(189, 189, 189);
+  color: var(--primary-lighter-color);
   text-decoration: none;
+  transition: color .2s ease;
+}
+
+/* .link-styles:hover {
+  color: var(--primary-lighter-color);
+  transition: color 0.3s ease;
+} */
+
+.underlineLink::before {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 1px;
+  bottom: 0;
+  top: 110%;
+  left: 0;
+  background-color: #000;
+  transform: scaleX(0);
+  transform-origin: top left;
+  transition: transform 0.3s ease;
+}
+
+.underlineLink{
+  position: relative;
+}
+
+.underlineLink:hover::before {
+  transform: scaleX(1);
 }

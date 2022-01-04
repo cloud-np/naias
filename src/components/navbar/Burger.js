@@ -13,6 +13,12 @@ const StyledBurger = styled.div`
     display: flex;
     justify-content: space-around;
     flex-flow: column nowrap;
+    cursor: pointer;
+    :hover {
+      span{
+        background-color: var(--primary-color);
+      }
+    }
   }
   span {
     width: 1rem;
@@ -38,7 +44,7 @@ const Burger = () => {
   const [open, setOpen] = useState(false)
   
   return (
-    <div style={{"margin-top": "-20px"}}>
+    <div style={{"marginTop": "-16px"}}>
       <StyledBurger open={open} onClick={() => setOpen(!open)}>
         <span />
         <span />
