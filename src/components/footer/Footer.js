@@ -28,7 +28,7 @@ const FooterContainer = styled.footer`
     display: -ms-flexbox;
 
     color: var(--primary-color);
-    margin-top: 2rem;
+    margin-top: 5vh;
   }
 
   ul {
