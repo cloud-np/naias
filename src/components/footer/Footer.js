@@ -33,7 +33,7 @@ const FooterContainer = styled.footer`
 
   ul {
     list-style: none;
-    font-family: var(--greek-title-font);
+    font-family: var(--greek-paragraph-font);
     font-size: 0.8rem;
     > li {
       margin-bottom: 0.6rem;

@@ -24,6 +24,7 @@ import aithousa from "../assets/images/aithousa/1.jpg"
 import Layout from "../components/layout"
 import Carousel from "../components/carousel/Carousel"
 import Seo from "../components/seo"
+import IconsInfo from "../components/iconsinfo/IconsInfo"
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -42,14 +43,23 @@ const IndexPage = () => {
       ease: Power3.easeInOut,
       duration: 1,
     })
-    gsap.to(".responsive-img", {
+    gsap.to(".ringImg", {
       scrollTrigger: {
-        trigger: ".responsive-img",
+        trigger: ".ringImg",
+        scrub: 1,
+      },
+      y: -20,
+      ease: Power3.easeInOut,
+      duration: 3,
+    })
+    gsap.to(".cupcakesImg", {
+      scrollTrigger: {
+        trigger: ".cupcakesImg",
         scrub: 1,
       },
       y: -10,
-      ease: Power3.easeInOut,
-      duration: 3,
+      ease: Power3.ease,
+      duration: 4,
     })
   }, [])
 
@@ -73,7 +83,7 @@ const IndexPage = () => {
             muted
           ></video>
         </figure>
-         <section className="showcase_content">
+        <section className="showcase_content">
           <StaticImage
             src={"../static/naias-logo-golden.png"}
             alt="Kthma Naias logo"
@@ -90,19 +100,42 @@ const IndexPage = () => {
         <section className="Dream-it__content">
           <h4 className="content__subtitle">DREAM IT</h4>
           <h1 className="Dream-it__title">Γνώση, αγάπη και τεχνογνωσία</h1>
+          <blockquote className="Dream-it__quote">
+            <p>
+              <i>&ldquo;Η ζωή είναι ένα λουλούδι κι ο έρωτας το μέλι του.&rdquo;</i>
+              {/* <i>&ldquo;Μια αστραπή η ζωή μας... μα προλαβαίνουμε&rdquo;</i> */}
+
+            </p>
+          </blockquote>
+          {/* <figcaption style={{float: "right", marginTop: "-.8rem"}}>—Νίκος Καζαντζάκης</figcaption> */}
+          <figcaption style={{float: "right", marginTop: "-.8rem"}}>—Βίκτωρ Ουγκώ</figcaption>
+          <p className="Dream-it__prolog">
+            Με αγάπη, μεράκι και σεβασμό προς την φύση, δημιουργήσαμε ένα
+            παραμυθένιο χώρο από Πέτρα και Ξύλο, που μας χαρίζει την ευχαρίστηση
+            να γεμήσουμε τους ανθρώπους αξέχαστες στιγμές.
+          </p>
           <p>
-            Με γνώμονα τα θέλω σας και πυξίδα την αγάπη σας με σεβασμό και
-            υπευθυνότητα θα διοργα- νώσουμε μια ονειρεμένη δεξίωση γάμου όπως
-            την ονειρευτήκατε.
+            Ο καταπράσινος κήπος που δεσπόζει η επιβλητική πισίνα με τα
+            γαλαζοπράσινα νερά της, οι εντυπωσιακοί βραχόκηποι και οι
+            καταρράκτες που ρέουν μέσα στον χώρο αποπνέουν θετική ενέργεια.
+          </p>
+          <p>
+            Η εκπληκτική minimal αίθουσα δεξιώσεων με μοντέρνα αρχιτεκτονική,
+            σας περιμένει ακόμα και τους πιο κρύους χειμώνες να απολαύσετε,
+            απεριόριστη θέα μέσα από τις κρυστάλλινες τζαμαρίες, στον μαγευτικό
+            κήπο απολαμβάνοντας την θαλπωρή της σάλας μας. Η μεγάλη χωρητικότητα
+            της, με τις πελώριες τζαμαρίες που δεσπόζουν, δημιουργούν αίσθημα
+            ελευθερίας που σαγηνεύουν με την λάμψη τους και την διακριτική
+            πολυτέλεια του κτήματος Ναϊάς.
           </p>
         </section>
       </article>
       <section className="Live-it">
         <div className="Live-it__imgs">
-          <div className="responsive-img">
+          <div className="ringImg">
             <img className="Live-it__ring" src={ringImg} alt="wedding ring" />
           </div>
-          <div className="responsive-img">
+          <div className="cupcakesImg">
             <img
               className="Live-it__cupcakes"
               src={cupcakesImg}
@@ -110,6 +143,7 @@ const IndexPage = () => {
             />
           </div>
         </div>
+        <IconsInfo />
         <h4 className="content__subtitle">LIVE IT</h4>
         <h1 className="Live-it__title">
           Live your <i style={{ fontWeight: "normal" }}>dream</i>

@@ -15,7 +15,7 @@ const CarouselContainer = styled.div`
   z-index: 3;
   width: 100%;
   .mySlide{
-    height: 16rem;
+    height: 30rem;
     width: 100%;
   }
 

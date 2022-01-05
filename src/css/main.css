@@ -11,9 +11,9 @@ html{
   --white-color: rgb(247, 247, 247);
   --grey-color: rgb(94, 94, 94);
   --black-color: rgb(38, 38, 38);
-  --title-font: "Playfair Display", serif;
+  --greek-title-font: "Playfair Display", serif;
   --secondary-title-font: "Lato", serif;
-  --greek-title-font: "Manrope", sans-serif;
+  --greek-paragraph-font: "Manrope", sans-serif;
 }
 
 

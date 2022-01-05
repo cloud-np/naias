@@ -20,6 +20,39 @@ const Nav = styled.nav`
     width: 4.6rem;
     margin-top: -18px;
   }
+
+  .leftGroup {
+    display: flex;
+    > button{
+      margin-right: 2rem;
+      color: white;
+      background: none;
+      font-family: var(--secondary-title-font);
+      border: none;
+      height: 30px;
+      padding: 0 1rem;
+      cursor: pointer;
+      margin-top: -12px;
+      text-align: center;
+      border-radius: 5%;
+      border: 2px solid white;
+      position: relative;
+
+    }
+    > button::after{
+      background: white;
+      content: '';
+      position: absolute;
+      height: 100%;
+      transition: width .3s ease-in-out;
+    }
+    > button:hover {
+      color: blue;
+      > button::after{
+        width: 100%;
+      }
+    }
+  }
 `
 const Navbar = () => {
   const [colorChange, setColorchange] = useState(false)
@@ -35,7 +68,13 @@ const Navbar = () => {
           formats={["auto", "webp", "avif"]}
         />
       </div>
-      <Burger />
+      <div className="leftGroup">
+
+        <button>
+          CONTACT
+        </button>
+        <Burger />
+      </div>
     </Nav>
   )
 }

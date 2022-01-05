@@ -28,7 +28,7 @@ const Section = styled.section`
       color: var(--grey-color);
     }
     p > a {
-      font-family: var(--greek-title-font);
+      font-family: var(--greek-paragraph-font);
       color: var(--grey-color);
     }
   }

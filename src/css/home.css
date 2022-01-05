@@ -78,19 +78,30 @@
 
 .content__subtitle {
   margin-bottom: 0.15rem;
+  margin-top: 3rem;
 }
 
 .Dream-it__title {
-  font-family: "Playfair Display", serif;
+  font-family: var(--greek-title-font);
   display: flex;
   font-size: 2.9rem;
   justify-self: center;
+}
+
+.Dream-it__quote {
+  margin-top: 3rem;
+}
+
+.Dream-it__prolog{
+  font-size: 1.1rem;
+  margin-top: 5rem;
 }
 
 .Dream-it__content {
   margin-top: 6rem;
   margin-left: 2rem;
   margin-right: 2rem;
+  font-family: var(--greek-paragraph-font);
 }
 
 .responsive-img {
@@ -120,13 +131,13 @@
 }
 
 .Live-it__cupcakes {
-  width: 12rem;
-  margin-top: -8rem;
+  width: 15rem;
+  margin-top: -12rem;
   margin-right: 6rem;
 }
 
 .Live-it__ring {
-  width: 13.5rem;
+  width: 16.5rem;
   margin-left: 2.5rem;
 }
 
