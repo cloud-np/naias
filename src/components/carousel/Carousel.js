@@ -35,7 +35,7 @@ const Carousel = ({ photos }) => {
     speed: 1900,
     autoplay: {
       delay: 2500,
-      disableOnInteraction: true,
+      disableOnInteraction: false,
     },
   }
 

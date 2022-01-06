@@ -3,13 +3,14 @@ import styled from "styled-components"
 import Burger from "./Burger"
 import { useState } from "react"
 import { StaticImage } from "gatsby-plugin-image"
+import AnimatedBtn from "../animatedbtn/AnimatedBtn"
 
-import './navbar.css'
+import "./navbar.css"
 
 const Nav = styled.nav`
   width: 100%;
   height: 55px;
-  transition: background .3s ease-in-out;
+  transition: background 0.3s ease-in-out;
   padding: 30px 20px;
   top: 0px;
   z-index: 2;
@@ -23,40 +24,13 @@ const Nav = styled.nav`
 
   .leftGroup {
     display: flex;
-    > button{
-      margin-right: 2rem;
-      color: white;
-      background: none;
-      font-family: var(--secondary-title-font);
-      border: none;
-      height: 30px;
-      padding: 0 1rem;
-      cursor: pointer;
-      margin-top: -12px;
-      text-align: center;
-      border-radius: 5%;
-      border: 2px solid white;
-      position: relative;
-
-    }
-    > button::after{
-      background: white;
-      content: '';
-      position: absolute;
-      height: 100%;
-      transition: width .3s ease-in-out;
-    }
-    > button:hover {
-      color: blue;
-      > button::after{
-        width: 100%;
-      }
-    }
   }
 `
+
 const Navbar = () => {
   const [colorChange, setColorchange] = useState(false)
-  const changeNavbarColor = () =>  window.scrollY >= 80 ? setColorchange(true) : setColorchange(false)
+  const changeNavbarColor = () =>
+    window.scrollY >= 80 ? setColorchange(true) : setColorchange(false)
 
   window.addEventListener("scroll", changeNavbarColor)
   return (
@@ -69,10 +43,7 @@ const Navbar = () => {
         />
       </div>
       <div className="leftGroup">
-
-        <button>
-          CONTACT
-        </button>
+        <AnimatedBtn text="Contact" />
         <Burger />
       </div>
     </Nav>

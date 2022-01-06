@@ -11,6 +11,7 @@ html{
   --white-color: rgb(247, 247, 247);
   --grey-color: rgb(94, 94, 94);
   --black-color: rgb(38, 38, 38);
+  --light-brown: #c2b299;
   --greek-title-font: "Playfair Display", serif;
   --secondary-title-font: "Lato", serif;
   --greek-paragraph-font: "Manrope", sans-serif;
@@ -78,4 +79,66 @@ a:hover {
 
 .underlineLink:hover::before {
   transform: scaleX(1);
+}
+
+/* Global Button Styles */
+button.animated-btn:link, button.animated-btn:visited {
+	position: relative;
+	display: block;
+	margin: 30px auto 0;
+	padding: 14px 15px;
+	color: #fff;
+	font-size:14px;
+	font-weight: bold;
+	text-align: center;
+	text-decoration: none;
+	text-transform: uppercase;
+	overflow: hidden;
+	letter-spacing: .08em;
+	border-radius: 0;
+	text-shadow: 0 0 1px rgba(0, 0, 0, 0.2), 0 1px 0 rgba(0, 0, 0, 0.2);
+	-webkit-transition: all 1s ease;
+	-moz-transition: all 1s ease;
+	-o-transition: all 1s ease;
+	transition: all 1s ease;
+}
+button.animated-btn:link:after, button.animated-btn:visited:after {
+	content: "";
+	position: absolute;
+	height: 0%;
+	left: 50%;
+	top: 50%;
+	width: 150%;
+	z-index: -1;
+	-webkit-transition: all 0.75s ease 0s;
+	-moz-transition: all 0.75s ease 0s;
+	-o-transition: all 0.75s ease 0s;
+	transition: all 0.75s ease 0s;
+}
+button.animated-btn:link:hover, button.animated-btn:visited:hover {
+	color: #FFF;
+	text-shadow: none;
+}
+button.animated-btn:link:hover:after, button.animated-btn:visited:hover:after {
+	height: 450%;
+}
+button.animated-btn:link, button.animated-btn:visited {
+	position: relative;
+	display: block;
+	margin: 30px auto 0;
+	padding: 14px 15px;
+	color: #fff;
+	font-size:14px;
+	border-radius: 0;
+	font-weight: bold;
+	text-align: center;
+	text-decoration: none;
+	text-transform: uppercase;
+	overflow: hidden;
+	letter-spacing: .08em;
+	text-shadow: 0 0 1px rgba(0, 0, 0, 0.2), 0 1px 0 rgba(0, 0, 0, 0.2);
+	-webkit-transition: all 1s ease;
+	-moz-transition: all 1s ease;
+	-o-transition: all 1s ease;
+	transition: all 1s ease;
 }

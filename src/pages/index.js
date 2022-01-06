@@ -25,6 +25,7 @@ import Layout from "../components/layout"
 import Carousel from "../components/carousel/Carousel"
 import Seo from "../components/seo"
 import IconsInfo from "../components/iconsinfo/IconsInfo"
+import ContactUsForm from "../components/contactusform/ContactUsForm"
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -152,6 +153,7 @@ const IndexPage = () => {
           <Carousel photos={carouselPhotos} />
         </div>
       </section>
+      <ContactUsForm />
       {/* <p>
       <Link to="/page-2/">Go to page 2</Link> <br />
       <Link to="/using-typescript/">Go to "Using TypeScript"</Link> <br />
