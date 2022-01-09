@@ -62,6 +62,22 @@ const IndexPage = () => {
       ease: Power3.ease,
       duration: 4,
     })
+    gsap.fromTo(
+      ".animText",
+      {
+        autoAlpha: 0,
+        y: 50,
+      },
+      {
+        scrollTrigger: {
+          trigger: ".animText",
+          scrub: 1,
+        },
+        duration: 2,
+        autoAlpha: 1,
+        y: 0,
+      }
+    )
   }, [])
 
   const carouselPhotos = [
@@ -99,36 +115,37 @@ const IndexPage = () => {
       </article>
       <article className="Dream-it">
         <section className="Dream-it__content">
-          <h4 className="content__subtitle">DREAM IT</h4>
-          <h1 className="Dream-it__title">Γνώση, αγάπη και τεχνογνωσία</h1>
-          <blockquote className="Dream-it__quote">
-            <p>
-              <i>&ldquo;Η ζωή είναι ένα λουλούδι κι ο έρωτας το μέλι του.&rdquo;</i>
-              {/* <i>&ldquo;Μια αστραπή η ζωή μας... μα προλαβαίνουμε&rdquo;</i> */}
-
+          <header className="Dream-it__header">
+            <h4 className="Dream-it__subtitle content__subtitle">DREAM IT</h4>
+            <h1 className="Dream-it__title">Γνώση, αγάπη και τεχνογνωσία</h1>
+            <blockquote className="Dream-it__quote">
+              <p>
+                <i>
+                  &ldquo;Η ζωή είναι ένα λουλούδι κι ο έρωτας το μέλι
+                  του.&rdquo;
+                </i>
+                {/* <i>&ldquo;Μια αστραπή η ζωή μας... μα προλαβαίνουμε&rdquo;</i> */}
+              </p>
+            </blockquote>
+            {/* <figcaption style={{float: "right", marginTop: "-.8rem"}}>—Νίκος Καζαντζάκης</figcaption> */}
+            <figcaption style={{ float: "right", marginTop: "-.8rem" }}>
+              —Βίκτωρ Ουγκώ
+            </figcaption>
+          </header>
+          <div className="Dream-it__carousel">
+            <Carousel photos={carouselPhotos} />
+          </div>
+          <main className="Dream-it__main">
+            <p className="Dream-it__prolog animText">
+              Με αγάπη, μεράκι και σεβασμό προς την φύση, δημιουργήσαμε ένα
+              παραμυθένιο χώρο από Πέτρα και Ξύλο, που μας χαρίζει την
+              ευχαρίστηση να γεμήσουμε τους ανθρώπους αξέχαστες στιγμές.
             </p>
-          </blockquote>
-          {/* <figcaption style={{float: "right", marginTop: "-.8rem"}}>—Νίκος Καζαντζάκης</figcaption> */}
-          <figcaption style={{float: "right", marginTop: "-.8rem"}}>—Βίκτωρ Ουγκώ</figcaption>
-          <p className="Dream-it__prolog">
-            Με αγάπη, μεράκι και σεβασμό προς την φύση, δημιουργήσαμε ένα
-            παραμυθένιο χώρο από Πέτρα και Ξύλο, που μας χαρίζει την ευχαρίστηση
-            να γεμήσουμε τους ανθρώπους αξέχαστες στιγμές.
-          </p>
-          <p>
-            Ο καταπράσινος κήπος που δεσπόζει η επιβλητική πισίνα με τα
-            γαλαζοπράσινα νερά της, οι εντυπωσιακοί βραχόκηποι και οι
-            καταρράκτες που ρέουν μέσα στον χώρο αποπνέουν θετική ενέργεια.
-          </p>
-          <p>
-            Η εκπληκτική minimal αίθουσα δεξιώσεων με μοντέρνα αρχιτεκτονική,
-            σας περιμένει ακόμα και τους πιο κρύους χειμώνες να απολαύσετε,
-            απεριόριστη θέα μέσα από τις κρυστάλλινες τζαμαρίες, στον μαγευτικό
-            κήπο απολαμβάνοντας την θαλπωρή της σάλας μας. Η μεγάλη χωρητικότητα
-            της, με τις πελώριες τζαμαρίες που δεσπόζουν, δημιουργούν αίσθημα
-            ελευθερίας που σαγηνεύουν με την λάμψη τους και την διακριτική
-            πολυτέλεια του κτήματος Ναϊάς.
-          </p>
+            <p className="animText">
+              Η εκπληκτική minimal αίθουσα δεξιώσεων με μοντέρνα αρχιτεκτονική,
+              σας περιμένει ακόμα και τους πιο κρύους χειμώνες να απολαύσετε.
+            </p>
+          </main>
         </section>
       </article>
       <section className="Live-it">
@@ -150,16 +167,10 @@ const IndexPage = () => {
           Live your <i style={{ fontWeight: "normal" }}>dream</i>
         </h1>
         <div className="Live-it__content">
-          <Carousel photos={carouselPhotos} />
+          <Carousel photos={carouselPhotos} isForInsta={true}/>
         </div>
       </section>
       <ContactUsForm />
-      {/* <p>
-      <Link to="/page-2/">Go to page 2</Link> <br />
-      <Link to="/using-typescript/">Go to "Using TypeScript"</Link> <br />
-      <Link to="/using-ssr">Go to "Using SSR"</Link> <br />
-      <Link to="/using-dsg">Go to "Using DSG"</Link>
-    </p> */}
     </Layout>
   )
 }

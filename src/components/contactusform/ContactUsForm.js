@@ -3,8 +3,6 @@ import styled from "styled-components"
 import { useForm } from "react-hook-form"
 import useWindowDimensions from "../../helpers/useWindowDimensions"
 
-import map from "../../static/map.jpg"
-
 const Section = styled.section`
   background-color: var(--light-brown);
   font-family: var(--greek-paragraph-font);
@@ -78,7 +76,11 @@ const ContactUsForm = () => {
           {...register("lastName")}
           placeholder="Επίθετο"
         />
-
+        {/* <select {...register("gender")}>
+          <option value="female">female</option>
+          <option value="male">male</option>
+          <option value="other">other</option>
+        </select> */}
         <button type="submit">Αποστολή</button>
       </form>
       <div className="mapCont">

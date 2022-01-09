@@ -1,8 +1,8 @@
-import React from "react"
+import React, { useEffect } from "react"
 import { FaBaby, FaChurch } from "react-icons/fa"
 import { BsFillPeopleFill as PeopleIcon } from "react-icons/bs"
-import weddingIcon from "../../static/bride.png"
 import styled from "styled-components"
+import gsap from "gsap"
 
 const Ul = styled.ul`
   display: flex;
@@ -56,6 +56,24 @@ const Ul = styled.ul`
 `
 
 const IconsInfo = () => {
+  useEffect(() => {
+    gsap.fromTo(
+      ".infoCont", {
+        autoAlpha: 0,
+        y: 50,
+      },
+      {
+        scrollTrigger: {
+          trigger: ".middleCont",
+          once: true,
+        },
+        duration: 2,
+        autoAlpha: 1,
+        y: 0,
+      }
+    )
+  }, [])
+
   return (
     <Ul>
       <li className="infoCont">
@@ -73,7 +91,7 @@ const IconsInfo = () => {
         </div>
       </li>
 
-      <li className="infoCont">
+      <li className="infoCont middleCont">
         <div className="iconCont">
           <FaBaby className="babyIcon" />
         </div>
@@ -94,8 +112,8 @@ const IconsInfo = () => {
         <div>
           <h3>Εκδηλώσεις</h3>
           <p>
-            Παρέχοντας οργάνωση και αξιοπιστεία αναλαμβάνουμε μεγάλη γκάμα εκδηλώσεων όπως: event,
-            παιδικά πάρτι, κοπές πίτας ή gala.
+            Παρέχοντας οργάνωση και αξιοπιστεία αναλαμβάνουμε μεγάλη γκάμα
+            εκδηλώσεων όπως: event, παιδικά πάρτι, κοπές πίτας ή gala.
           </p>
         </div>
       </li>

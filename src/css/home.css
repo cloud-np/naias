@@ -81,11 +81,22 @@
   margin-top: 3rem;
 }
 
+.Dream-it__subtitle{
+  color: var(--light-brown);
+}
+
 .Dream-it__title {
   font-family: var(--greek-title-font);
   display: flex;
   font-size: 2.9rem;
   justify-self: center;
+  color: var(--primary-color);
+}
+
+.Dream-it__carousel{
+  width: 100%;
+  margin: 3rem 0;
+  float: left;
 }
 
 .Dream-it__quote {
@@ -97,10 +108,14 @@
   margin-top: 5rem;
 }
 
+.Dream-it__header, .Dream-it__main {
+  margin: 0 2rem;
+}
+
 .Dream-it__content {
   margin-top: 6rem;
-  margin-left: 2rem;
-  margin-right: 2rem;
+  /* margin-left: 2rem;
+  margin-right: 2rem; */
   font-family: var(--greek-paragraph-font);
 }
 
