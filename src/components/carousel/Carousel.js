@@ -18,6 +18,10 @@ const CarouselContainer = styled.div`
     height: 30rem;
     width: 100%;
   }
+  .instaSlide {
+    height: 10rem;
+    width: 150px;
+  }
 
   .slideImg {
     object-fit: cover;
@@ -30,7 +34,8 @@ const Carousel = ({ photos, isForInsta = false }) => {
   const params = isForInsta
     ? {
         modules: [Pagination, Autoplay, Navigation],
-        slidesPerView: "auto",
+        slidesPerView: 2.6,
+        loop: true,
       }
     : {
         modules: [Pagination, Autoplay, Navigation],
@@ -43,7 +48,7 @@ const Carousel = ({ photos, isForInsta = false }) => {
           disableOnInteraction: false,
         },
       }
-
+    const carouselPhotos = isForInsta ? examplePosts : photos
   return (
     <CarouselContainer>
       <Swiper {...params}>
@@ -52,23 +57,15 @@ const Carousel = ({ photos, isForInsta = false }) => {
             <img src={photoObj.photo} alt={photoObj.alt} className="slideImg"/>
           </SwiperSlide> 
         )} */}
-        {isForInsta
-          ? examplePosts.map((photoObj, index) => (
-              <SwiperSlide key={uuidv4()} className="mySlide">
-                <img
-                  src={photoObj.img}
-                  // alt={photoObj.alt}
-                  className="slideImg"
-                />
-              </SwiperSlide>
-            ))
-          : photos.map((photoObj, index) => (
-              <SwiperSlide key={uuidv4()} className="mySlide">
-                <img
-                  src={photoObj.photo}
-                  alt={photoObj.alt}
-                  className="slideImg"
-                />
+        {carouselPhotos.map((photoObj, index) => (
+              <SwiperSlide key={uuidv4()} className={`${isForInsta ? 'instaSlide' : 'mySlide'}`}>
+                <a className="slideImg" href={photoObj.url ? photoObj.url : '#'}>
+                  <img
+                    src={photoObj.photo}
+                    alt={photoObj.alt}
+                    className='slideImg'
+                  />
+                </a>
               </SwiperSlide>
             ))}
       </Swiper>

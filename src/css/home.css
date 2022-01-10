@@ -158,7 +158,13 @@
 
 .Live-it__title {
   font-family: var(--title-font);
-  font-size: 2.9rem;
+  font-size: 2.7rem;
+  font-weight: 500;
+  letter-spacing: -1px;
   margin: 0 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.Live-it__undertitle {
   margin-bottom: 3rem;
 }

@@ -5,6 +5,7 @@ import promo from "../assets/naias-promo.mp4"
 import { Power3 } from "gsap"
 import gsap from "gsap"
 import ScrollTrigger from "gsap/ScrollTrigger"
+import { AiFillInstagram } from "react-icons/ai"
 
 // CSS
 import "normalize.css"
@@ -163,11 +164,16 @@ const IndexPage = () => {
         </div>
         <IconsInfo />
         <h4 className="content__subtitle">LIVE IT</h4>
-        <h1 className="Live-it__title">
-          Live your <i style={{ fontWeight: "normal" }}>dream</i>
-        </h1>
+        <h1 className="Live-it__title">#ktimanaias</h1>
+        <h5 className="Live-it__undertitle">
+          Follow us
+          <AiFillInstagram  style={{position: 'relative', top: '5px', fontSize: '20px', marginLeft: '4px'}} />
+          <a style={{marginLeft: '2px', textDecoration: 'underline'}} href="https://www.instagram.com/ktimanaiasgr/">
+            @ktimanaias
+          </a>
+        </h5>
         <div className="Live-it__content">
-          <Carousel photos={carouselPhotos} isForInsta={true}/>
+          <Carousel photos={carouselPhotos} isForInsta={true} />
         </div>
       </section>
       <ContactUsForm />
