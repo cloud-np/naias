@@ -8,7 +8,10 @@ const Ul = styled.ul`
   display: flex;
   color: white;
   flex-direction: column;
-  margin: 0 2rem;
+  > li {
+    margin: 0 2rem;
+
+  }
   margin-top: 4rem;
   text-align: left;
   font-family: var(--greek-paragraph-font);
@@ -50,7 +53,6 @@ const Ul = styled.ul`
     width: 40px;
   }
   .usersIcon {
-    /* margin-right: 2.3rem; */
     width: 40px;
   }
 `

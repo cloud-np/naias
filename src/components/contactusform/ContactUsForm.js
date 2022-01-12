@@ -76,6 +76,14 @@ const Section = styled.section`
     background-repeat: no-repeat;
     margin-bottom: 2rem;
   }
+
+  label {
+    display: flex;
+    float: left;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    
+  }
 `
 
 const ContactUsForm = () => {
@@ -91,7 +99,8 @@ const ContactUsForm = () => {
   return (
     <Section>
       <form onSubmit={handleSubmit(onSubmit)}>
-        <input {...register("firstName")} placeholder="Όνομα" />
+        <input id="contactUsfirstName" {...register("firstName")} placeholder="Όνομα" />
+        <label htmlFor="contactUsfirstName">Όνομα</label>
         <input
           className="lastName"
           {...register("lastName")}
