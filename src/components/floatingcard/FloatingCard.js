@@ -1,8 +1,5 @@
-import React from "react"
+import React, { useState, useEffect } from "react"
 import styled from "styled-components"
-import night from "../../static/night.jpeg"
-import { FaBaby, FaChurch } from "react-icons/fa"
-import { BsFillPeopleFill as PeopleIcon } from "react-icons/bs"
 
 const Div = styled.div`
   list-style: none;
@@ -11,7 +8,6 @@ const Div = styled.div`
   /* height: 700px; */
   margin: auto;
   border-radius: 2px;
-  background: url(${night}) calc(100% - 53%) calc(100% - 79%) no-repeat;
   transform-origin: center center 0px;
   transition: all 0.5s ease-out;
 
@@ -72,21 +68,17 @@ const Div = styled.div`
   }
 `
 
-const FloatingCard = () => {
+const FloatingCard = ({ givenStyles, title, textSubTitle, mainText }) => {
   return (
-    <Div>
-      <div className="menu__title">
-        <FaChurch />
-        <h2>Γάμος</h2>
+    <Div style={givenStyles}>
+      <div data-swiper-parallax="-200" className="menu__title">
+      {title}
       </div>
-      <div className="menu__text">
-        <h4 className="menu__text__subtitle">LOVE IT</h4>
-        <h3><i>Ονειρική</i> Γαμήλια δεξίωση</h3>
-        <p>
-          Με γνώμονα τα θέλω σας και πυξίδα την αγάπη σας με σεβασμό και
-          υπευθυνότητα θα διοργανώσουμε μια ονειρεμένη δεξίωση γάμου όπως την
-          ονειρευτήκατε.
-        </p>
+      <div data-swiper-parallax="-200" className="menu__text">
+        <h4 className="menu__text__subtitle">
+        {textSubTitle}
+        </h4>
+        {mainText}
         <button>Μάθετε περισσότερα</button>
       </div>
     </Div>
