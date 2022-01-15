@@ -49,7 +49,7 @@ const Categories = () => {
     slidesPerView: 1.1,
     spaceBetween: 5,
     grabCursor: true,
-    speed: 1000,
+    speed: 1200,
     parallax: true,
     // autoplay: {
     //   delay: 2500,

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react"
+import React from "react"
 import styled from "styled-components"
 
 const Div = styled.div`
@@ -54,7 +54,13 @@ const Div = styled.div`
         font-family: var(--greek-paragraph-font);
         border-radius: 25px;
         padding: 14px;
+        cursor: pointer;
         background: none;
+        transition: all .4s ease-in-out;
+      :hover{
+        color: var(--grey-color);
+        background-color: var(--white-color);
+      }
     }
   }
   :hover {

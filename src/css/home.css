@@ -65,60 +65,10 @@
 }
 
 /* ////////////////////////// */
-/*  DREAM IT */
-.Dream-it {
-  background-color: var(--white-color);
-  display: block;
-  position: static;
-  margin-top: -8.5rem;
-  padding-top: 2rem;
-  padding-bottom: 13rem;
-  width: 100%;
-}
-
 .content__subtitle {
   margin-bottom: 0.15rem;
   margin-top: 3rem;
 }
-
-.Dream-it__subtitle{
-  color: var(--light-brown);
-}
-
-.Dream-it__title {
-  font-family: var(--greek-title-font);
-  display: flex;
-  font-size: 2.9rem;
-  justify-self: center;
-  color: var(--primary-color);
-}
-
-.Dream-it__carousel{
-  width: 100%;
-  margin: 3rem 0;
-  float: left;
-}
-
-.Dream-it__quote {
-  margin-top: 3rem;
-}
-
-.Dream-it__prolog{
-  font-size: 1.1rem;
-  margin-top: 5rem;
-}
-
-.Dream-it__header, .Dream-it__main {
-  margin: 0 2rem;
-}
-
-.Dream-it__content {
-  margin-top: 6rem;
-  /* margin-left: 2rem;
-  margin-right: 2rem; */
-  font-family: var(--greek-paragraph-font);
-}
-
 .responsive-img {
   display: block;
   width: 100%;

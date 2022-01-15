@@ -16,16 +16,16 @@ import "../css/animations.css"
 // imgs
 import cupcakesImg from "../static/cupcakes.jpg"
 import ringImg from "../static/ring-photo.png"
+import garden from "../images/garden/1.jpg"
 
 // Carousel Images
-import church from "../assets/images/church/1.jpg"
-import aithousa from "../assets/images/aithousa/1.jpg"
+import aithousa from "../images/aithousa/1.jpg"
 
 // Componets
 import Layout from "../components/layout"
 import Carousel from "../components/carousel/Carousel"
 import Seo from "../components/seo"
-import IconsInfo from "../components/iconsinfo/IconsInfo"
+import DreamIt from "../pagesSpecificComps/DreamIt"
 import Categories from "../components/categoriescarousel/CategoriesCarousel"
 import ContactUsForm from "../components/contactusform/ContactUsForm"
 
@@ -64,29 +64,10 @@ const IndexPage = () => {
       ease: Power3.ease,
       duration: 4,
     })
-    gsap.fromTo(
-      ".animText",
-      {
-        autoAlpha: 0,
-        y: 50,
-      },
-      {
-        scrollTrigger: {
-          trigger: ".animText",
-          scrub: 1,
-        },
-        duration: 2,
-        autoAlpha: 1,
-        y: 0,
-      }
-    )
   }, [])
 
   const carouselPhotos = [
-    { photo: church, alt: "Εκκλησάκι" },
     { photo: aithousa, alt: "Αίθουσα" },
-    { photo: church, alt: "Εκκλησάκι" },
-    { photo: church, alt: "Εκκλησάκι" },
   ]
   return (
     <Layout>
@@ -115,41 +96,7 @@ const IndexPage = () => {
           </h3>
         </section>
       </article>
-      <article className="Dream-it">
-        <section className="Dream-it__content">
-          <header className="Dream-it__header">
-            <h4 className="Dream-it__subtitle content__subtitle">DREAM IT</h4>
-            <h1 className="Dream-it__title">Γνώση, αγάπη και τεχνογνωσία</h1>
-            <blockquote className="Dream-it__quote">
-              <p>
-                <i>
-                  &ldquo;Η ζωή είναι ένα λουλούδι κι ο έρωτας το μέλι
-                  του.&rdquo;
-                </i>
-                {/* <i>&ldquo;Μια αστραπή η ζωή μας... μα προλαβαίνουμε&rdquo;</i> */}
-              </p>
-            </blockquote>
-            {/* <figcaption style={{float: "right", marginTop: "-.8rem"}}>—Νίκος Καζαντζάκης</figcaption> */}
-            <figcaption style={{ float: "right", marginTop: "-.8rem" }}>
-              —Βίκτωρ Ουγκώ
-            </figcaption>
-          </header>
-          <div className="Dream-it__carousel">
-            <Carousel photos={carouselPhotos} />
-          </div>
-          <main className="Dream-it__main">
-            <p className="Dream-it__prolog animText">
-              Με αγάπη, μεράκι και σεβασμό προς την φύση, δημιουργήσαμε ένα
-              παραμυθένιο χώρο από Πέτρα και Ξύλο, που μας χαρίζει την
-              ευχαρίστηση να γεμήσουμε τους ανθρώπους αξέχαστες στιγμές.
-            </p>
-            <p className="animText">
-              Η εκπληκτική minimal αίθουσα δεξιώσεων με μοντέρνα αρχιτεκτονική,
-              σας περιμένει ακόμα και τους πιο κρύους χειμώνες να απολαύσετε.
-            </p>
-          </main>
-        </section>
-      </article>
+      <DreamIt />
       <section className="Love-it">
         <div className="Love-it__imgs">
           <div className="ringImg">
