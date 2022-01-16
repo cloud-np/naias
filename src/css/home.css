@@ -49,8 +49,9 @@
 }
 
 .showcase_content__undertext {
-  font-family: var(--secondary-title-font);
-  font-size: 1.2rem;
+  font-family: var(--caligraphic-font);
+  font-weight: 500;
+  font-size: 1.7rem;
   position: absolute;
   width: 100%;
   margin-top: 1rem;

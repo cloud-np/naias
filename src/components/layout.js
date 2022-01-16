@@ -1,7 +1,9 @@
 import * as React from "react"
+import { useEffect, useRef } from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 import styled from "styled-components"
+import gsap from "gsap"
 
 
 import Header from "./header"
@@ -12,12 +14,12 @@ import "./layout.css"
 
 const Span = styled.span`
   width: 100vw;
-  height: 100vh;
+  height: 110vh;
   position: absolute;
   background-color: black;
   z-index: 999;
-  transform: translate3d(-100%, 0px, 0px);
-  /* animation: fadeScreenIn 2s linear forwards; */
+  /* transform: translate3d(-100%, 0px, 0px); */
+  animation: fadeScreenIn 2s linear forwards;
   /* -webkit-animation: fadeInWithScale 4s;
   -moz-animation: fadeInWithScale 4s;
   -o-animation: fadeInWithScale 4s;
@@ -48,7 +50,7 @@ const Layout = ({ children }) => {
 
   return (
     <>
-      <Span className="landing animation"></Span>
+      <Span></Span>
       {/* <Header siteTitle={data.site.siteMetadata?.title || `Title`} /> */}
       <header>
         <Navbar />
