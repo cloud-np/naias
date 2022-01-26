@@ -14,7 +14,7 @@ const DreamItContainer = styled.article`
   position: static;
   margin-top: -8.5rem;
   padding-top: 2rem;
-  padding-bottom: 13rem;
+  padding-bottom: 3rem;
   width: 100%;
 
   blockquote {
@@ -36,9 +36,6 @@ const DreamItContainer = styled.article`
     figcaption {
       font-size: 0.8rem;
     }
-    /* h4 {
-        color: var(--light-brown);
-    } */
     blockquote {
       margin-top: 2rem;
       font-size: 0.8rem;
@@ -55,9 +52,6 @@ const DreamItContainer = styled.article`
       /* color: var(--primary-color); */
     }
 
-    /* figcaption {
-        float: right;
-    } */
     h1,
     blockquote,
     figcaption {
@@ -77,6 +71,13 @@ const DreamItContainer = styled.article`
 
   main {
     margin: 0 2rem;
+    h4 {
+      color: var(--primary-color);
+    }
+    h2 {
+      position: relative;
+      font-size: 2rem;
+    }
   }
 
   section {
@@ -111,7 +112,6 @@ const DreamIt = () => {
       </div> */}
       <section>
         <header>
-          {/* <h4 className="content__subtitle">DREAM IT</h4> */}
           <div className="header-text">
             <h1>Ζήστε την στιγμή</h1>
             {/* <h1>Dream it today</h1> */}
@@ -124,6 +124,8 @@ const DreamIt = () => {
           </div>
         </header>
         <main>
+          <h4 className="content__subtitle">DREAM IT</h4>
+          <h2>Κτήμα Ναϊάς</h2>
           <p className="prolog animText">
             Με αγάπη, μεράκι και σεβασμό προς την φύση, δημιουργήσαμε ένα
             παραμυθένιο χώρο από Πέτρα και Ξύλο, που μας χαρίζει την ευχαρίστηση

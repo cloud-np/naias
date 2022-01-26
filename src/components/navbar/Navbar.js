@@ -43,7 +43,7 @@ const Navbar = () => {
         />
       </div>
       <div className="leftGroup">
-        <AnimatedBtn text="Contact" />
+        {/* <AnimatedBtn text="Contact" /> */}
         <Burger />
       </div>
     </Nav>

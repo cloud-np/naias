@@ -1,10 +1,11 @@
 import React from "react"
 import styled from "styled-components"
+import { Link } from "gatsby"
 
 const Div = styled.div`
   list-style: none;
   width: calc(100vw - 50px);
-  min-height: calc(100vh - 6.25rem);
+  /* min-height: calc(100vh - 6.25rem); */
   /* height: 700px; */
   margin: auto;
   border-radius: 2px;
@@ -16,7 +17,7 @@ const Div = styled.div`
   justify-content: space-between;
   text-align: left;
   max-width: 100%;
-  height: 100%;
+  height: 700px;
   color: var(--white-color);
   .menu__title {
     align-self: flex-start;
@@ -47,7 +48,7 @@ const Div = styled.div`
         margin-top: 3rem;
         font-size: .6rem;
     }
-    button {
+    a {
         /* border-style: none; */
         border: 1px solid white;
         color: var(--white-color);
@@ -74,18 +75,18 @@ const Div = styled.div`
   }
 `
 
-const FloatingCard = ({ givenStyles, title, textSubTitle, mainText }) => {
+const FloatingCard = ({ givenStyles, title, textSubTitle, mainText, url}) => {
   return (
     <Div style={givenStyles}>
       <div data-swiper-parallax="-200" className="menu__title">
-      {title}
+        {title}
       </div>
       <div data-swiper-parallax="-200" className="menu__text">
         <h4 className="menu__text__subtitle">
-        {textSubTitle}
+          {textSubTitle}
         </h4>
         {mainText}
-        <button>Μάθετε περισσότερα</button>
+        <Link to={url}>Μάθετε περισσότερα</Link>
       </div>
     </Div>
   )

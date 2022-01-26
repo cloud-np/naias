@@ -67,6 +67,7 @@ const Categories = () => {
               background: `url(${gamos}) calc(100% - 50%) center no-repeat`,
               backgroundSize: "600px",
             }}
+            url={`/gamos`}
             title={
               <>
                 <FaChurch />
@@ -94,6 +95,7 @@ const Categories = () => {
               background: `url(${baby}) calc(100% - 53%) calc(100% - 79%) no-repeat`,
               backgroundSize: "600px",
             }}
+            url={`/baptism`}
             title={
               <>
                 <FaBaby />
@@ -120,6 +122,7 @@ const Categories = () => {
               background: `url(${eventImg}) calc(100% - 53%) calc(100% - 77%) no-repeat`,
               backgroundSize: "555px",
             }}
+            url={`/events`}
             title={
               <>
                 <PeopleIcon />

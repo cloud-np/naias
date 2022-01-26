@@ -2,7 +2,7 @@ import React from "react"
 import styled from "styled-components"
 import { useForm } from "react-hook-form"
 import useWindowDimensions from "../../helpers/useWindowDimensions"
-import arrowDown from '../../static/arrow-down.svg'
+import arrowDown from "../../static/arrow-down.svg"
 
 const Section = styled.section`
   background-color: var(--light-brown);
@@ -15,7 +15,9 @@ const Section = styled.section`
     color: white;
   }
 
-  input {
+  input,
+  textarea,
+  select {
     margin: 10px 0;
     border: none;
     font-size: 0.7rem;
@@ -23,6 +25,10 @@ const Section = styled.section`
     width: 300px;
     height: auto;
   }
+  textarea {
+    height: 150px;
+  }
+
   input:focus {
     outline: none;
   }
@@ -60,9 +66,8 @@ const Section = styled.section`
   }
 
   .select {
-    background-position: calc(100% - 1em) center; 
+    background-position: calc(100% - 1em) center;
     width: 300px;
-    /* height: 64px; */
     appearance: none;
     font-size: 14px;
     letter-spacing: 0.5px;
@@ -74,15 +79,13 @@ const Section = styled.section`
     background-color: rgb(255, 255, 255);
     background-size: 24px;
     background-repeat: no-repeat;
-    margin-bottom: 2rem;
   }
 
   label {
-    display: flex;
-    float: left;
     text-transform: uppercase;
     letter-spacing: 2px;
-    
+    width: 100%;
+    margin-left: 12px;
   }
 `
 
@@ -99,19 +102,56 @@ const ContactUsForm = () => {
   return (
     <Section>
       <form onSubmit={handleSubmit(onSubmit)}>
-        <input id="contactUsfirstName" {...register("firstName")} placeholder="Όνομα" />
-        <label htmlFor="contactUsfirstName">Όνομα</label>
+        <label htmlFor="contactUsFirstName">Ονομα</label>
         <input
-          className="lastName"
+          id="contactUsFirstName"
+          {...register("firstName")}
+          placeholder="Όνομα"
+        />
+        <label htmlFor="contactUsLastName">Επιθετο</label>
+        <input
+          id="contactUsLastName"
           {...register("lastName")}
           placeholder="Επίθετο"
         />
-        <select style={{backgroundImage: `url('${arrowDown}')`}} className="select ox" {...register("gender")}>
+        <label htmlFor="contactUsSelect">Δεξιωσεις</label>
+        <select
+          id="contactUsSelect"
+          style={{ backgroundImage: `url('${arrowDown}')` }}
+          className="select"
+          {...register("gender")}
+        >
           <option value={null}></option>
           <option value="female">Γάμος</option>
           <option value="male">Βάπτιση</option>
           <option value="other">Εκδήλωση</option>
         </select>
+        <label htmlFor="contactUsPeopleNum">Αριθμος ατομων</label>
+        <input
+          id="contactUsPeopleNum"
+          type="number"
+          {...register("peopleNum")}
+          placeholder="Αριθμός ατόμων (κατά προσέγγιση)"
+        />
+        <label htmlFor="contactUsPhone">Τηλεφωνο</label>
+        <input
+          id="contactUsPhone"
+          type="tel"
+          {...register("phone")}
+          placeholder="Τηλεφωνο (Κινητο)"
+        />
+        <label htmlFor="contactUsEmail">E-mail</label>
+        <input
+          id="contactUsEmail"
+          type="email"
+          {...register("email")}
+          placeholder="john@example.com"
+        />
+        <textarea
+          id="contactUsComments"
+          {...register("comments")}
+          placeholder="Σχόλια"
+        />
         <button type="submit">Αποστολή</button>
       </form>
       <div className="mapCont">

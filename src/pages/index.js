@@ -1,7 +1,5 @@
 import * as React from "react"
 import { useEffect } from "react"
-import { StaticImage } from "gatsby-plugin-image"
-import promo from "../assets/naias-promo.mp4"
 import { Power3 } from "gsap"
 import gsap from "gsap"
 import ScrollTrigger from "gsap/ScrollTrigger"
@@ -23,6 +21,7 @@ import aithousa from "../images/aithousa/1.jpg"
 
 // Componets
 import Layout from "../components/layout"
+import ShowcaseVideo from "../pagesSpecificComps/ShowcaseVideo"
 import Carousel from "../components/carousel/Carousel"
 import Seo from "../components/seo"
 import DreamIt from "../pagesSpecificComps/DreamIt"
@@ -33,19 +32,6 @@ gsap.registerPlugin(ScrollTrigger)
 
 const IndexPage = () => {
   useEffect(() => {
-    gsap.to("#videoContainer", {
-      scrollBehavior: "smooth",
-      scrollTrigger: {
-        trigger: "#videoContainer",
-        scrub: 1,
-        start: "top 10%",
-        end: "bottom",
-        // markers: true,
-      },
-      y: -70,
-      ease: Power3.easeInOut,
-      duration: 1,
-    })
     gsap.to(".ringImg", {
       scrollTrigger: {
         trigger: ".ringImg",
@@ -72,33 +58,10 @@ const IndexPage = () => {
   return (
     <Layout>
       <Seo title="Home" />
-      <article className="showcase">
-        <figure className="video_container" id="videoContainer">
-          <video
-            src={promo}
-            type="video/mp4"
-            className="video_container__video"
-            autoPlay
-            loop
-            muted
-          ></video>
-        </figure>
-        <section className="showcase_content">
-          <StaticImage
-            src={"../static/naias-logo-golden.png"}
-            alt="Kthma Naias logo"
-            formats={["auto", "webp", "avif"]}
-            className="showcase_content__logo fade-in-with-scale"
-          />
-          {/* <h3 className="showcase_content__undertext fade-in"> */}
-          <h3 className="showcase_content__undertext fade-in">
-            We make a day to remember
-          </h3>
-        </section>
-      </article>
+      <ShowcaseVideo />
       <DreamIt />
       <section className="Love-it">
-        <div className="Love-it__imgs">
+        {/* <div className="Love-it__imgs">
           <div className="ringImg">
             <img className="Love-it__ring" src={ringImg} alt="wedding ring" />
           </div>
@@ -109,8 +72,7 @@ const IndexPage = () => {
               alt="wedding cupcakes"
             />
           </div>
-        </div>
-        {/* <IconsInfo /> */}
+        </div> */}
         <Categories />
         <h4 className="content__subtitle">LOVE IT</h4>
         <h1 className="Love-it__title">#ktimanaias</h1>
