@@ -23,13 +23,15 @@ const Ul = styled.ul`
     right: 0;
     height: 100vh;
     width: 100%;
-    padding-top: 3rem;
+    padding-top: 6rem;
     transition: transform 0.3s ease-in-out;
     .first {
       margin-top: 5rem;
     }
     .RightNav__li {
       margin-left: 4rem;
+      font-size: 2rem;
+      line-height: 2rem;
       color: var(--white-color);
       text-transform: uppercase;
     }
