@@ -28,6 +28,28 @@ const Section = styled.section`
     }
   }
   .showActiveImage {
+    /* position: absolute;
+    background-color: black;
+    width: 100%;
+    z-index: 999;
+    height: 100%; */
+    justify-content: center;
+    img {
+      /* transform: translateX(); */
+    }
+  }
+
+  .display{
+    transform: scale(1.4);
+    transition: all .2s ease-in;
+  }
+
+  .img{
+    transition: all .2s ease-in;
+  }
+
+  .hideActiveImage {
+    display: none;
   }
 `
 
@@ -37,14 +59,15 @@ const PhotoShowcase = ({ givenImages }) => {
 
   const handleClick = (el) => {
     setActiveImage({src: el.target.src, alt: el.target.alt, extraClasses: el.target.classList.toString()})
+    el.target.classList.add("myimg")
   }
 
   return (
     <Section>
       {givenImages.map((image, index) => (
-        <img onClick={handleClick} key={uuidv4()} className={`grid-card ${image.extraClasses}`} src={image.src} alt={image.alt}/>
+        <img onClick={handleClick} key={uuidv4()} className={`grid-card img ${image.extraClasses} ${image.src === activeImage?.src ?  'display' : ''}`} src={image.src} alt={image.alt} />
       ))}
-      <div className={activeImage ? "showActiveImage" : "hideActiveImage"}>
+      <div className={activeImage ?"showActiveImage" : "hideActiveImage"}>
         <img src={activeImage?.src} alt={activeImage?.alt} className={`grid-card ${activeImage?.extraClasses}`}/>
       </div>
     </Section>
