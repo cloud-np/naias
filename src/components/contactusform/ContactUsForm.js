@@ -122,10 +122,6 @@ const Section = styled.section`
       margin-left: 6px;
     }
 
-    .numOfPeopleCont {
-      width: 75%;
-    }
-
     #contactUsPeopleNum{
       margin-bottom: 0;
     }
@@ -135,6 +131,19 @@ const Section = styled.section`
       text-transform: none;
       letter-spacing: .3px;
     }
+  }
+
+  .forLargeInput {
+    display: -ms-inline-grid;
+    display: -moz-inline-grid;
+    display: inline-grid;
+  }
+  .forLargeInput > input {
+    margin-left: 10px;
+  }
+
+  @media screen and (min-width: 690px){
+    background-color: aliceblue;
   }
 `
 
@@ -198,20 +207,24 @@ const ContactUsForm = () => {
               <label className="underLabel" htmlFor="contactUsPeopleNum">Κατά προσέγγιση</label>
             </div>
           </div>
-          <label htmlFor="contactUsPhone">Τηλεφωνο</label>
-          <input
-            id="contactUsPhone"
-            type="tel"
-            {...register("phone")}
-            placeholder="Τηλεφωνο (Κινητο)"
-          />
-          <label htmlFor="contactUsEmail">E-mail</label>
-          <input
-            id="contactUsEmail"
-            type="email"
-            {...register("email")}
-            placeholder="john@example.com"
-          />
+          <div className="forLargeInput">
+            <label className="labelForLargeInput" htmlFor="contactUsPhone">Τηλεφωνο</label>
+            <input
+              id="contactUsPhone"
+              type="tel"
+              {...register("phone")}
+              placeholder="Τηλεφωνο (Κινητο)"
+            />
+          </div>
+          <div className="forLargeInput">
+            <label htmlFor="contactUsEmail">E-mail</label>
+            <input
+              id="contactUsEmail"
+              type="email"
+              {...register("email")}
+              placeholder="john@example.com"
+            />
+          </div>
           <textarea
             id="contactUsComments"
             {...register("comments")}

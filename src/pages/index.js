@@ -11,11 +11,6 @@ import "../css/main.css"
 import "../css/home.css"
 import "../css/animations.css"
 
-// imgs
-import cupcakesImg from "../static/cupcakes.jpg"
-import ringImg from "../static/ring-photo.png"
-import garden from "../images/garden/1.jpg"
-
 // Carousel Images
 import aithousa from "../images/aithousa/1.jpg"
 

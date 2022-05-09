@@ -3,7 +3,7 @@ import styled from "styled-components"
 import Burger from "./Burger"
 import { useState } from "react"
 import { StaticImage } from "gatsby-plugin-image"
-import AnimatedBtn from "../animatedbtn/AnimatedBtn"
+import { Link } from "gatsby"
 
 import "./navbar.css"
 
@@ -29,18 +29,19 @@ const Nav = styled.nav`
 
 const Navbar = () => {
   const [colorChange, setColorchange] = useState(false)
-  const changeNavbarColor = () =>
-    window.scrollY >= 80 ? setColorchange(true) : setColorchange(false)
+  const changeNavbarColor = () => window.scrollY >= 80 ? setColorchange(true) : setColorchange(false)
 
   window.addEventListener("scroll", changeNavbarColor)
   return (
     <Nav className={colorChange ? "bg-dark" : "bg-transp"}>
       <div className="logo">
-        <StaticImage
-          src={"../static/naias-logo-golden.png"}
-          alt="Kthma Naias logo"
-          formats={["auto", "webp", "avif"]}
-        />
+        <Link to="/">
+          <StaticImage
+            src={"../static/naias-logo-golden.png"}
+            alt="Kthma Naias logo"
+            formats={["auto", "webp", "avif"]}
+          />
+        </Link>
       </div>
       <div className="leftGroup">
         {/* <AnimatedBtn text="Contact" /> */}

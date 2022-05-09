@@ -166,5 +166,5 @@ button.animated-btn:link, button.animated-btn:visited {
 
 .grid-card:hover{
 	box-shadow: rgba(2, 8, 20, .1) 0 .35rem 1.175rem, rgba(2, 8, 20, 0.08) 0 .175rem .5rem;
-	transform: translateY(-3px) scale(1.2);
+	transform: translateY(-3px) scale(1.02);
 }

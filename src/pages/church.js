@@ -1,6 +1,5 @@
 import React from "react"
 import Layout from "../components/layout"
-import ShowcaseVideo from "../pagesSpecificComps/ShowcaseVideo"
 import Seo from "../components/seo"
 import church from "../images/church/1.jpg"
 import PhotoShowcase from "../components/photoShowcase/PhotoShowcase"
