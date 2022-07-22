@@ -38,9 +38,9 @@ const Ul = styled.ul`
   }
 `
 
-const RightNav = ({ open }) => {
+const RightNav = ({ isOpen }) => {
   return (
-    <Ul open={open}>
+    <Ul open={isOpen}>
       <li className="RightNav__li first">
         <Link to="/church">Εκκλησάκι</Link>
       </li>

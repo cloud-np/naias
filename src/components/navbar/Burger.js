@@ -6,9 +6,10 @@ const StyledBurger = styled.div`
   width: 1rem;
   height: 1rem;
   right: 20px;
-  margin-top: 10px;
+  /* margin-top: 10px; */
   z-index: 22;
   display: none;
+  font-family: var(--greek-paragraph-font);
   @media (max-width: 768px) {
     display: flex;
     justify-content: space-around;
@@ -44,7 +45,7 @@ const Burger = () => {
   const [open, setOpen] = useState(false)
   
   return (
-    <div style={{"marginTop": "-16px"}}>
+    <div>
       <StyledBurger open={open} onClick={() => setOpen(!open)}>
         <span />
         <span />

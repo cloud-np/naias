@@ -13,7 +13,7 @@ RUN apt install g++ make python git libc6-dev build-essential libpng-dev \
     libjpeg-dev libvips-dev libvips musl-dev node-gyp pngquant webp -y 
 
 # Default powerline10k theme, no plugins installed
-RUN sh -c "$(wget -O- https://github.com/deluan/zsh-in-docker/releases/download/v1.1.2/zsh-in-docker.sh)"
+# RUN sh -c "$(wget -O- https://github.com/deluan/zsh-in-docker/releases/download/v1.1.2/zsh-in-docker.sh)"
 
 RUN yarn global add gatsby-cli
 
@@ -25,6 +25,6 @@ COPY ./package.json /naias
 COPY ./yarn.lock /naias
 RUN yarn install && yarn cache clean
 COPY . /naias
+# ADD . .
 CMD ["gatsby", "develop", "-H", "0.0.0.0" ]
-ADD . .
 

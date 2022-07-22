@@ -1,11 +1,11 @@
 /* @import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;700;&family=Playfair+Display:wght@500;900;&display=swap"); */
-@import url('https://fonts.googleapis.com/css2?family=Imperial+Script&family=Lato:wght@300;700;900&family=Playfair+Display:wght@500&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Imperial+Script&family=Lato:wght@300;700;900&family=Playfair+Display:wght@500&display=swap");
 
-html{
+html {
   scroll-behavior: smooth;
 }
 
-:root{
+:root {
   --primary-color: #bf9b55;
   --primary-lighter-color: #ebb45d;
   --secondary-color: #d4c3b8;
@@ -18,7 +18,6 @@ html{
   --secondary-title-font: "Lato", serif;
   --greek-paragraph-font: "Manrope", sans-serif;
 }
-
 
 ::-webkit-scrollbar {
   display: none;
@@ -52,7 +51,7 @@ a:active {
 a:hover {
   color: var(--primary-lighter-color);
   text-decoration: none;
-  transition: color .2s ease;
+  transition: color 0.2s ease;
 }
 
 /* .link-styles:hover {
@@ -75,7 +74,7 @@ a:hover {
   transition: transform 0.3s ease;
 }
 
-.underlineLink{
+.underlineLink {
   position: relative;
 }
 
@@ -84,87 +83,94 @@ a:hover {
 }
 
 /* Global Button Styles */
-button.animated-btn:link, button.animated-btn:visited {
-	position: relative;
-	display: block;
-	margin: 30px auto 0;
-	padding: 14px 15px;
-	color: #fff;
-	font-size:14px;
-	font-weight: bold;
-	text-align: center;
-	text-decoration: none;
-	text-transform: uppercase;
-	overflow: hidden;
-	letter-spacing: .08em;
-	border-radius: 0;
-	text-shadow: 0 0 1px rgba(0, 0, 0, 0.2), 0 1px 0 rgba(0, 0, 0, 0.2);
-	-webkit-transition: all 1s ease;
-	-moz-transition: all 1s ease;
-	-o-transition: all 1s ease;
-	transition: all 1s ease;
+button.animated-btn:link,
+button.animated-btn:visited {
+  position: relative;
+  display: block;
+  margin: 30px auto 0;
+  padding: 14px 15px;
+  color: #fff;
+  font-size: 14px;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  overflow: hidden;
+  letter-spacing: 0.08em;
+  border-radius: 0;
+  text-shadow: 0 0 1px rgba(0, 0, 0, 0.2), 0 1px 0 rgba(0, 0, 0, 0.2);
+  -webkit-transition: all 1s ease;
+  -moz-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  transition: all 1s ease;
 }
-button.animated-btn:link:after, button.animated-btn:visited:after {
-	content: "";
-	position: absolute;
-	height: 0%;
-	left: 50%;
-	top: 50%;
-	width: 150%;
-	z-index: -1;
-	-webkit-transition: all 0.75s ease 0s;
-	-moz-transition: all 0.75s ease 0s;
-	-o-transition: all 0.75s ease 0s;
-	transition: all 0.75s ease 0s;
+button.animated-btn:link:after,
+button.animated-btn:visited:after {
+  content: "";
+  position: absolute;
+  height: 0%;
+  left: 50%;
+  top: 50%;
+  width: 150%;
+  z-index: -1;
+  -webkit-transition: all 0.75s ease 0s;
+  -moz-transition: all 0.75s ease 0s;
+  -o-transition: all 0.75s ease 0s;
+  transition: all 0.75s ease 0s;
 }
-button.animated-btn:link:hover, button.animated-btn:visited:hover {
-	color: #FFF;
-	text-shadow: none;
+button.animated-btn:link:hover,
+button.animated-btn:visited:hover {
+  color: #fff;
+  text-shadow: none;
 }
-button.animated-btn:link:hover:after, button.animated-btn:visited:hover:after {
-	height: 450%;
+button.animated-btn:link:hover:after,
+button.animated-btn:visited:hover:after {
+  height: 450%;
 }
-button.animated-btn:link, button.animated-btn:visited {
-	position: relative;
-	display: block;
-	margin: 30px auto 0;
-	padding: 14px 15px;
-	color: #fff;
-	font-size:14px;
-	border-radius: 0;
-	font-weight: bold;
-	text-align: center;
-	text-decoration: none;
-	text-transform: uppercase;
-	overflow: hidden;
-	letter-spacing: .08em;
-	text-shadow: 0 0 1px rgba(0, 0, 0, 0.2), 0 1px 0 rgba(0, 0, 0, 0.2);
-	-webkit-transition: all 1s ease;
-	-moz-transition: all 1s ease;
-	-o-transition: all 1s ease;
-	transition: all 1s ease;
+button.animated-btn:link,
+button.animated-btn:visited {
+  position: relative;
+  display: block;
+  margin: 30px auto 0;
+  padding: 14px 15px;
+  color: #fff;
+  font-size: 14px;
+  border-radius: 0;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  overflow: hidden;
+  letter-spacing: 0.08em;
+  text-shadow: 0 0 1px rgba(0, 0, 0, 0.2), 0 1px 0 rgba(0, 0, 0, 0.2);
+  -webkit-transition: all 1s ease;
+  -moz-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  transition: all 1s ease;
 }
 
 .grid-card {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	background: #353535;
-	font-size: 3rem;
-	color: #fff;
-	box-shadow: rgba(3, 8, 20, 0.1) 0 .15rem .5rem, rgba(2, 8, 20, 0.1) 0 .075rem .175rem;
-	height: 100%;
-	width: 100%;
-	border-radius: 4px;
-	transition: all 500ms;
-	overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: #353535;
+  font-size: 3rem;
+  color: #fff;
+  box-shadow: rgba(3, 8, 20, 0.1) 0 0.15rem 0.5rem,
+    rgba(2, 8, 20, 0.1) 0 0.075rem 0.175rem;
+  height: 100%;
+  width: 100%;
+  border-radius: 4px;
+  transition: all 500ms;
+  overflow: hidden;
 
-	background-size: cover;
-	background-position: center;
-	background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
-.grid-card:hover{
-	box-shadow: rgba(2, 8, 20, .1) 0 .35rem 1.175rem, rgba(2, 8, 20, 0.08) 0 .175rem .5rem;
-	transform: translateY(-3px) scale(1.02);
+.grid-card:hover {
+  box-shadow: rgba(2, 8, 20, 0.1) 0 0.35rem 1.175rem,
+    rgba(2, 8, 20, 0.08) 0 0.175rem 0.5rem;
+  transform: translateY(-3px) scale(1.02);
 }
