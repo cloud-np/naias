@@ -1,8 +1,6 @@
-import React, { useState } from "react"
+import React from "react"
 import styled from "styled-components"
 import { useForm } from "react-hook-form"
-import { MdEmail } from "react-icons/md"
-import useWindowDimensions from "../../helpers/useWindowDimensions"
 import arrowDown from "../../static/arrow-down.svg"
 
 const Section = styled.section`

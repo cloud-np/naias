@@ -1,6 +1,5 @@
 import React, { useEffect } from "react"
 import styled from "styled-components"
-import { Power3 } from "gsap"
 import gsap from "gsap"
 
 // Imgs
@@ -14,24 +13,26 @@ const DreamItContainer = styled.article`
   position: static;
   margin-top: -8.5rem;
   padding-top: 2rem;
-  padding-bottom: 3rem;
   width: 100%;
+  height: 100%;
+  overflow:hidden;
 
   blockquote {
     margin-top: 3rem;
   }
 
   header {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
+    /* background-size: 100vw; */
+    /* TODO: Fix this with a media query or something */
+    /* height: 75vh; */
     background: url(${gamos}) no-repeat center center;
-    background-size: 79vh;
-    height: 45vh;
+    background-size: cover;
     color: var(--white-color);
+    display: grid;
+    place-items: center;
+    padding: 35vh 0;
     .header-text {
-      margin: 2rem;
-      margin-left: 0.5rem;
+      text-align: center;
     }
     figcaption {
       font-size: 0.8rem;
@@ -45,11 +46,9 @@ const DreamItContainer = styled.article`
       font-family: var(--secondary-title-font);
       font-weight: 900;
       display: flex;
-      font-size: 1.1rem;
       text-transform: uppercase;
       letter-spacing: 5px;
       justify-self: center;
-      /* color: var(--primary-color); */
     }
 
     h1,
@@ -61,6 +60,18 @@ const DreamItContainer = styled.article`
       margin-top: 1rem;
       /* background-color: rgba(0, 0, 0, .3);
         border-radius: 1px; */
+    }
+
+    @media screen and (max-width: 690px) {
+      h1 {
+        font-size: 1.5rem;
+      }
+    }
+  }
+
+  @media screen and (min-width: 1200px) {
+    main {
+      display: none;
     }
   }
 
@@ -81,12 +92,12 @@ const DreamItContainer = styled.article`
   }
 
   section {
-    /* margin-top: 6rem; */
     font-family: var(--greek-paragraph-font);
   }
 `
 
 const DreamIt = () => {
+  // const {windowWidth, windowHeight} = useWindowDimensions()
   useEffect(() => {
     gsap.fromTo(
       ".animText",
@@ -107,14 +118,10 @@ const DreamIt = () => {
   }, [])
   return (
     <DreamItContainer>
-      {/* <div className="imgCont">
-        <img src={church} />
-      </div> */}
       <section>
         <header>
           <div className="header-text">
             <h1>Ζήστε την στιγμή</h1>
-            {/* <h1>Dream it today</h1> */}
             <blockquote>
               <p>
                 <i>&ldquo;Μια αστραπή η ζωή μας... μα προλαβαίνουμε&rdquo;</i>
@@ -123,7 +130,8 @@ const DreamIt = () => {
             <figcaption>—Νίκος Καζαντζάκης</figcaption>
           </div>
         </header>
-        <main>
+        { window.innerWidth >= 1200 ? '' :
+         <main>
           <h4 className="content__subtitle">DREAM IT</h4>
           <h2>Κτήμα Ναϊάς</h2>
           <p className="prolog animText">
@@ -132,6 +140,7 @@ const DreamIt = () => {
             να γεμήσουμε τους ανθρώπους αξέχαστες στιγμές.
           </p>
         </main>
+        }
       </section>
     </DreamItContainer>
   )

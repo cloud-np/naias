@@ -17,11 +17,8 @@ const Nav = styled.nav`
   top: 0px;
   z-index: 2;
   position: fixed;
-  /* display: flex;
-  justify-content: center; */
 
   .nav__body {
-    /* width: max(83%, 1000px); */
     max-width: 75rem;
     margin-right: auto;
     margin-left: auto;
@@ -32,7 +29,6 @@ const Nav = styled.nav`
 
   .logo {
     width: 4.6rem;
-    /* margin-top: -16px; */
     margin-left: 15px;
   }
 
@@ -41,38 +37,40 @@ const Nav = styled.nav`
     font-size: 1rem;
   }
 
-  .changeLang {
+  .changeLang{
+    margin-top: -9px;
+  }
+
+  .changeLangBtn {
     color: white;
     border: none;
+    letter-spacing: .03em;
     border-radius: 1.5625rem;
     line-height: 1.5rem;
     background-color: var(--light-brown);
+    font-family: var(--paragraph-font);
     transition: background-color 0.3s;    
-    letter-spacing: .03em;
-    padding: 1rem;
+    padding: .6rem;
+    cursor: pointer;
+    display: flex;
   }
 
   .changeLangIcon {
     color: white;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     margin-right: .5rem;
-    margin-bottom: -7px;
+    margin-bottom: -10px;
   }
 
   @media (max-width: 768px) {
-    /* .changeLang {
+    .changeLang {
       display: none;
-    } */
+    }
   }
 `
 const Navbar = () => {
-  // const [colorChange, setColorchange] = useState(false)
   const [isScrollingDown, isScrollingUp] = useScrollDirection()
 
-  console.log(isScrollingDown)
-  // const changeNavbarColor = () => window.scrollY >= 80 ? setColorchange(true) : setColorchange(false)
-
-  // window.addEventListener("scroll", changeNavbarColor)
   return (
     <Nav className={isScrollingDown ? "hideNav" : "showNav bg-dark"}>
       <div className="nav__body">
@@ -88,10 +86,12 @@ const Navbar = () => {
         <div className="burger">
           <Burger />
         </div>
-        <button className="changeLang" >
-          <MdLanguage className="changeLangIcon" />
-          English
-        </button>
+        <div className="changeLang" >
+          <button className="changeLangBtn" >
+            <MdLanguage className="changeLangIcon" />
+            English
+          </button>
+        </div>
       </div>
     </Nav>
   )

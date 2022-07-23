@@ -8,8 +8,11 @@ const Ul = styled.ul`
   list-style: none;
   display: flex;
   flex-flow: row nowrap;
-  font-family: var(--greek-title-font);
-  font-size: 0.8rem;
+  /* font-family: var(--greek-title-font);
+  font-size: 0.8rem; */
+
+  /* font-size: 1.2rem; */
+  font-family: var(--paragraph-font);
   li {
     padding: 10px 20px;
   }

@@ -4,10 +4,9 @@ import { Link } from "gatsby"
 
 const Div = styled.div`
   list-style: none;
-  width: calc(100vw - 50px);
-  /* min-height: calc(100vh - 6.25rem); */
-  /* height: 700px; */
-  margin: auto;
+  /* width: min(calc(100vw - 50px), 500px); */
+  width: 500px;
+  /* margin: auto; */
   border-radius: 2px;
   transform-origin: center center 0px;
   transition: all 0.5s ease-out;
@@ -16,7 +15,7 @@ const Div = styled.div`
   flex-direction: column;
   justify-content: space-between;
   text-align: left;
-  max-width: 100%;
+  /* max-width: 100%; */
   height: 700px;
   color: var(--white-color);
   .menu__title {
