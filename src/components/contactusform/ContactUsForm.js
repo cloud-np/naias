@@ -6,20 +6,25 @@ import arrowDown from "../../static/arrow-down.svg"
 const Section = styled.section`
   background-color: var(--light-brown);
   font-family: var(--greek-paragraph-font);
-  max-width: 100%;
   padding: 0 15px;
   margin: 0;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
   justify-content: space-between;
+  align-items: center;
+
+  .contactForm {
+    display: flex;
+    justify-content: center;
+  }
+
   form {
+    width: 55vw;
     display: flex;
     flex-direction: column;
     align-items: center;
-    /* padding: 50px 40px; */
     color: white;
-    /* margin: 1rem; */
   }
 
   .formRow {
@@ -104,10 +109,6 @@ const Section = styled.section`
     background-size: 24px;
     background-repeat: no-repeat;
   }
-
-  @media screen and (min-width: 690px) {
-    background-color: aliceblue;
-  }
 `
 
 const ContactUsForm = () => {
@@ -129,6 +130,7 @@ const ContactUsForm = () => {
 
   return (
     <Section>
+      <h2>Πείτε μας για εσάς</h2>
       <div className="contactForm">
         <form id="contact-form" onSubmit={handleSubmit(onSubmit)} noValidate>
           {/* Row 1 of form */}

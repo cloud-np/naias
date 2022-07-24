@@ -18,9 +18,22 @@ const CarouselContainer = styled.div`
     height: 30rem;
     width: 100%;
   }
+
   .instaSlide {
-    height: 10rem;
-    width: 150px;
+    /* height: 400px; */
+    /* max-height: 400px;
+    max-width: 400px; */
+    /* width: 400px; */
+    /* width: auto; */
+    /* width: 150px; */
+  }
+  @media screen and (max-width: var(--container-width-xs)) {
+    .instaSlide {
+      height: 150px;
+      width: 150px;
+      /* width: auto; */
+      /* object-fit: cover; */
+    }
   }
 
   .slideImg {
@@ -28,13 +41,40 @@ const CarouselContainer = styled.div`
     width: inherit;
     height: inherit;
   }
+
+  .instaSwiper{
+    height: min(10vh, 400px);
+    width: auto;
+  }
 `
 
 const Carousel = ({ photos, isForInsta = false }) => {
   const params = isForInsta
     ? {
         modules: [Pagination, Autoplay, Navigation],
-        slidesPerView: 2.6,
+        // slidesPerView: 2.6,
+        // slidesPerView: "auto",
+        className: "instaSwiper",
+        breakpoints: {
+          "@0.00": {
+            slidesPerView: 2.6,
+          },
+          "@0.25": {
+            slidesPerView: 3.6,
+          },
+          "@0.50": {
+            slidesPerView: 5.6,
+          },
+          "@0.75": {
+            slidesPerView: 6.6,
+          },
+          "@1.00": {
+            slidesPerView: 8.6,
+          },
+          "@1.50": {
+            slidesPerView: 12.6,
+          },
+        },
         loop: true,
       }
     : {
@@ -48,7 +88,7 @@ const Carousel = ({ photos, isForInsta = false }) => {
           disableOnInteraction: false,
         },
       }
-    const carouselPhotos = isForInsta ? examplePosts : photos
+  const carouselPhotos = isForInsta ? examplePosts : photos
   return (
     <CarouselContainer>
       <Swiper {...params}>
@@ -58,16 +98,19 @@ const Carousel = ({ photos, isForInsta = false }) => {
           </SwiperSlide> 
         )} */}
         {carouselPhotos.map((photoObj, index) => (
-              <SwiperSlide key={uuidv4()} className={`${isForInsta ? 'instaSlide' : 'mySlide'}`}>
-                <a className="slideImg" href={photoObj.url ? photoObj.url : '#'}>
-                  <img
-                    src={photoObj.photo}
-                    alt={photoObj.alt}
-                    className='slideImg'
-                  />
-                </a>
-              </SwiperSlide>
-            ))}
+          <SwiperSlide
+            key={uuidv4()}
+            className={`${isForInsta ? "instaSlide" : "mySlide"}`}
+          >
+            <a className="slideImg" href={photoObj.url ? photoObj.url : "#"}>
+              <img
+                src={photoObj.photo}
+                alt={photoObj.alt}
+                className="slideImg"
+              />
+            </a>
+          </SwiperSlide>
+        ))}
       </Swiper>
     </CarouselContainer>
   )

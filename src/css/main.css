@@ -17,6 +17,10 @@ html {
   --secondary-title-font: "Lato", serif;
   --greek-paragraph-font: "Manrope", sans-serif;
   --paragraph-font: "Roboto", sans-serif;
+  --container-width-xs: 720px;
+  --container-width-sm: 960px;
+  --container-width-md: 1120px;
+  --container-width-lg: 1420px;
 }
 
 ::-webkit-scrollbar {

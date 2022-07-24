@@ -84,10 +84,7 @@ const DreamItContainer = styled.article`
     display: flex;
     background: rgb(194,178,153);
     background-color: #8a875e;
-    /* background: linear-gradient(0deg, rgba(194,178,153,1) 0%, rgba(194,178,153,1) 18%, rgba(138,135,94,1) 18%, rgba(138,135,94,1) 100%); */
     justify-content: end;
-    /* justify-content: space-between; */
-    /* margin: rem; */
     .naiasImg {
       width: 45%;
       height: auto;

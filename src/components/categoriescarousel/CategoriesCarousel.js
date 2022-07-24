@@ -51,30 +51,30 @@ const Div = styled.div`
   }
 `
 
-// breakpoints: {
-//   "@0.00": {
-//     slidesPerView: 1.2,
-//   },
-//   "@0.75": {
-//     slidesPerView: 1.2,
-//   },
-//   "@1.00": {
-//     slidesPerView: 3,
-//   },
-//   "@1.50": {
-//     slidesPerView: 4,
-//   },
-// },
 const Categories = () => {
   const params = {
     modules: [Pagination, Autoplay, Parallax],
     slidesPerView: 1,
+    breakpoints: {
+      "@0.00": {
+        slidesPerView: 1,
+      },
+      "@0.50": {
+        slidesPerView: 2,
+      },
+      "@1.00": {
+        slidesPerView: 3,
+      },
+      // "@1.50": {
+      //   slidesPerView: 12.6,
+      // },
+    },
     navigation: true,
     pagination: { clickable: true },
     spaceBetween: 1,
+    parallax: window.innerWidth > 768 ? false : true,
     grabCursor: true,
     speed: 2700,
-    parallax: true,
     autoplay: {
       delay: 2500,
       disableOnInteraction: false,
