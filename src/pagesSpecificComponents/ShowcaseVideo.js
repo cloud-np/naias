@@ -70,11 +70,65 @@ const ShowcaseVideoContainer = styled.article`
     line-height: 1.2;
     margin-bottom: 0.5rem;
   }
+
+  .arrow,
+  .arrow:before {
+    position: absolute;
+    left: 50%;
+  }
+
+  .arrow {
+    opacity: .7;
+    width: 40px;
+    height: 40px;
+    top: 90%;
+    margin: -20px 0 0 -20px;
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    border-left: none;
+    border-top: none;
+    border-right: 2px #fff solid;
+    border-bottom: 2px #fff solid;
+    animation: arrowIn 10s ease-in;
+  }
+  @keyframes arrowIn {
+    0%{
+      opacity: 0;
+    }
+    100%{
+      opacity: 1;
+    }
+  }
+
+  .arrow:before {
+    content: "";
+    width: 20px;
+    height: 20px;
+    top: 50%;
+    margin: -10px 0 0 -10px;
+    border-left: none;
+    border-top: none;
+    border-right: 1px #fff solid;
+    border-bottom: 1px #fff solid;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-name: arrow;
+  }
+
+  @keyframes arrow {
+    0% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+      transform: translate(-10px, -10px);
+    }
+  }
 `
 
 const ShowcaseVideo = () => {
   useEffect(() => {
-    gsap.to("#videoContainer", {
+    gsap.to(".animateUpwards", {
       scrollBehavior: "smooth",
       scrollTrigger: {
         trigger: "#videoContainer",
@@ -86,17 +140,23 @@ const ShowcaseVideo = () => {
       ease: Power3.easeInOut,
       duration: 1,
     })
+    // gsap.to(".arrow", {
+    //   scrollBehavior: "smooth",
+    //   scrollTrigger: {
+    //     trigger: "#videoContainer",
+    //     scrub: 1,
+    //     start: "top 10%",
+    //     end: "bottom",
+    //   },
+    //   y: -140,
+    //   ease: Power3.easeInOut,
+    //   duration: 1,
+    // })
   }, [])
   return (
     <ShowcaseVideoContainer>
-      <figure id="videoContainer">
-        <video
-          src={promo}
-          type="video/mp4"
-          autoPlay
-          loop
-          muted
-        ></video>
+      <figure id="videoContainer" className="animateUpwards">
+        <video src={promo} type="video/mp4" autoPlay loop muted></video>
       </figure>
       <section>
         <StaticImage
@@ -106,10 +166,9 @@ const ShowcaseVideo = () => {
           className="logo fade-in-with-scale"
         />
         {/* <h3 className="showcase_content__undertext fade-in"> */}
-        <h3 className="fade-in">
-          We make a day to remember
-        </h3>
+        <h3 className="fade-in">We make a day to remember</h3>
       </section>
+      <div className="arrow"></div>
     </ShowcaseVideoContainer>
   )
 }

@@ -4,9 +4,9 @@ import { Link } from "gatsby"
 
 const Div = styled.div`
   list-style: none;
-  /* width: min(calc(100vw - 50px), 500px); */
-  width: 500px;
-  /* margin: auto; */
+  width: min(calc(100vw - 50px), 500px);
+  /* width: 500px; */
+  margin: auto;
   border-radius: 2px;
   transform-origin: center center 0px;
   transition: all 0.5s ease-out;
@@ -20,6 +20,7 @@ const Div = styled.div`
   color: var(--white-color);
   .menu__title {
     align-self: flex-start;
+    opacity: 1;
     margin: 2rem;
     font-weight: 100;
     transition: all 0.5s ease-out;

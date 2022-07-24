@@ -11,10 +11,12 @@ import { BsFillPeopleFill as PeopleIcon } from "react-icons/bs"
 
 import FloatingCard from "../floatingcard/FloatingCard"
 import { Swiper, SwiperSlide } from "swiper/react"
-import { Pagination, Autoplay, Parallax } from "swiper"
+import { Pagination, Autoplay, Parallax, Navigation } from "swiper"
+
 // Import Swiper styles
 import "swiper/css"
 import "swiper/css/pagination"
+import "./categoriescarousel.css"
 
 const Div = styled.div`
   /* display: flex; */
@@ -38,19 +40,14 @@ const Div = styled.div`
   /* .mySlide {
     width
   } */
-  .content {
-    display: grid;
-    place-items: center;
-    margin-left: auto;
-  }
-
   .swiper {
     margin-top: 3rem;
-    margin: 0 auto;
     /* max-width: 45vw; */
+    /* margin: 0 auto; */
   }
+
   .mySlide {
-    width: 100%;
+    /* background: #fff; */
   }
 `
 
@@ -72,15 +69,18 @@ const Categories = () => {
   const params = {
     modules: [Pagination, Autoplay, Parallax],
     slidesPerView: 1,
+    navigation: true,
+    pagination: { clickable: true },
     spaceBetween: 1,
     grabCursor: true,
-    speed: 1200,
+    speed: 2700,
     parallax: true,
-    // autoplay: {
-    //   delay: 2500,
-    //   disableOnInteraction: false,
-    // },
+    autoplay: {
+      delay: 2500,
+      disableOnInteraction: false,
+    },
   }
+
   return (
     <Div>
       <h4 className="content__subtitle">LIVE IT</h4>

@@ -1,36 +1,43 @@
 import React, { useEffect } from "react"
 import styled from "styled-components"
-import gsap from "gsap"
 
 // Imgs
 import church from "../images/church/1.jpg"
 import garden from "../images/garden/1.jpg"
+import naiasTopView from "../static/top-view-naias.jpg"
 import gamos from "../images/gamos2.jpg"
+import DreamItText from "./DreamItText"
+import { StaticImage } from "gatsby-plugin-image"
 
 const DreamItContainer = styled.article`
-  background-color: var(--white-color);
+  /* background-color: var(--white-color); */
+  background-color: var(--light-brown);
   display: block;
   position: static;
   margin-top: -8.5rem;
   padding-top: 2rem;
   width: 100%;
   height: 100%;
-  overflow:hidden;
+  overflow: hidden;
 
   blockquote {
     margin-top: 3rem;
   }
 
+  section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
   header {
-    /* background-size: 100vw; */
-    /* TODO: Fix this with a media query or something */
-    /* height: 75vh; */
     background: url(${gamos}) no-repeat center center;
     background-size: cover;
     color: var(--white-color);
     display: grid;
     place-items: center;
     padding: 35vh 0;
+
     .header-text {
       text-align: center;
     }
@@ -69,53 +76,39 @@ const DreamItContainer = styled.article`
     }
   }
 
-  @media screen and (min-width: 1200px) {
-    main {
-      display: none;
-    }
-  }
-
-  .prolog {
-    font-size: 1.1rem;
-    margin-top: 2rem;
-  }
-
-  main {
-    margin: 0 2rem;
-    h4 {
-      color: var(--primary-color);
-    }
-    h2 {
-      position: relative;
-      font-size: 2rem;
-    }
-  }
-
   section {
     font-family: var(--greek-paragraph-font);
+  }
+
+  .dreamItContainer {
+    display: flex;
+    background: rgb(194,178,153);
+    background-color: #8a875e;
+    /* background: linear-gradient(0deg, rgba(194,178,153,1) 0%, rgba(194,178,153,1) 18%, rgba(138,135,94,1) 18%, rgba(138,135,94,1) 100%); */
+    justify-content: end;
+    /* justify-content: space-between; */
+    /* margin: rem; */
+    .naiasImg {
+      width: 45%;
+      height: auto;
+      justify-self: end;
+      margin: 0;
+      object-fit: cover;
+    }
+    @media screen and (max-width: 690px) {
+      display: inline-block;
+      .naiasImg {
+        width: 100%;
+        margin-bottom: -.4rem;
+      }
+    }
+    .dreamItText {
+      /* margin-right: 4rem; */
+    }
   }
 `
 
 const DreamIt = () => {
-  // const {windowWidth, windowHeight} = useWindowDimensions()
-  useEffect(() => {
-    gsap.fromTo(
-      ".animText",
-      {
-        autoAlpha: 0,
-        y: 50,
-      },
-      {
-        scrollTrigger: {
-          trigger: ".animText",
-          scrub: 1,
-        },
-        duration: 2,
-        autoAlpha: 1,
-        y: 0,
-      }
-    )
-  }, [])
   return (
     <DreamItContainer>
       <section>
@@ -130,17 +123,17 @@ const DreamIt = () => {
             <figcaption>—Νίκος Καζαντζάκης</figcaption>
           </div>
         </header>
-        { window.innerWidth >= 1200 ? '' :
-         <main>
-          <h4 className="content__subtitle">DREAM IT</h4>
-          <h2>Κτήμα Ναϊάς</h2>
-          <p className="prolog animText">
-            Με αγάπη, μεράκι και σεβασμό προς την φύση, δημιουργήσαμε ένα
-            παραμυθένιο χώρο από Πέτρα και Ξύλο, που μας χαρίζει την ευχαρίστηση
-            να γεμήσουμε τους ανθρώπους αξέχαστες στιγμές.
-          </p>
-        </main>
-        }
+        <div className="dreamItContainer">
+          <DreamItText className="dreamItText" />
+          <img src={naiasTopView} className="naiasImg" />
+          {/* Swap to static sizes once you decide. */}
+          {/* <StaticImage
+            src={"../static/top-view-naias.jpg"}
+            alt="Kthma Naias logo"
+            formats={["auto", "webp", "avif"]}
+            className="top-view-naias"
+          /> */}
+        </div>
       </section>
     </DreamItContainer>
   )

@@ -70,9 +70,13 @@ const Nav = styled.nav`
 `
 const Navbar = () => {
   const [isScrollingDown, isScrollingUp] = useScrollDirection()
+  let navClasses = "";
+  if (isScrollingDown === false && isScrollingUp === false) navClasses = "showNav"
+  else if (isScrollingDown === true)                        navClasses = "hideNav"
+  else if (isScrollingDown === false)                       navClasses = "showNav bg-dark"
 
   return (
-    <Nav className={isScrollingDown ? "hideNav" : "showNav bg-dark"}>
+    <Nav className={navClasses}>
       <div className="nav__body">
         <div className="logo">
           <Link to="/">

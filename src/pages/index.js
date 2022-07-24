@@ -12,10 +12,10 @@ import "../css/animations.css"
 
 // Componets
 import Layout from "../components/layout"
-import ShowcaseVideo from "../pagesSpecificComps/ShowcaseVideo"
+import ShowcaseVideo from "../pagesSpecificComponents/ShowcaseVideo"
 import Seo from "../components/seo"
-import DreamIt from "../pagesSpecificComps/DreamIt"
-import LoveIt from "../pagesSpecificComps/LoveIt"
+import DreamIt from "../pagesSpecificComponents/DreamIt"
+import LoveIt from "../pagesSpecificComponents/LoveIt"
 import ContactUsForm from "../components/contactusform/ContactUsForm"
 
 gsap.registerPlugin(ScrollTrigger)
