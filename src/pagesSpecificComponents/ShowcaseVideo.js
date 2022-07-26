@@ -140,6 +140,21 @@ const ShowcaseVideo = () => {
       ease: Power3.easeInOut,
       duration: 1,
     })
+    gsap.to(".mainText", {
+      scrollBehavior: "smooth",
+      scrollTrigger: {
+        trigger: "#videoContainer",
+        scrub: 5,
+        start: "top 10%",
+        end: "bottom 10%",
+        markers: true,
+      },
+      y: -60,
+      opacity: 0,
+      scale: 2,
+      ease: Power3.easeInOut,
+      duration: 1,
+    })
     // gsap.to(".arrow", {
     //   scrollBehavior: "smooth",
     //   scrollTrigger: {
@@ -158,7 +173,7 @@ const ShowcaseVideo = () => {
       <figure id="videoContainer" className="animateUpwards">
         <video src={promo} type="video/mp4" autoPlay loop muted></video>
       </figure>
-      <section>
+      <section className="mainText">
         <StaticImage
           src={"../static/naias-logo-golden.png"}
           alt="Kthma Naias logo"
