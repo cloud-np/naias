@@ -1,4 +1,5 @@
-import React from "react"
+import React, { useEffect } from "react"
+import gsap from "gsap"
 import styled from "styled-components"
 import { Link } from "gatsby"
 
@@ -20,7 +21,7 @@ const Div = styled.div`
   color: var(--white-color);
   .menu__title {
     align-self: flex-start;
-    opacity: 1;
+    opacity: 0;
     margin: 2rem;
     font-weight: 100;
     transition: all 0.5s ease-out;
@@ -30,7 +31,8 @@ const Div = styled.div`
     }
   }
   .menu__text {
-    opacity: 1;
+    opacity: 0;
+    transform: translateY(100%);
     margin: 3rem;
     position: relative;
     transition: all 0.5s ease-in-out;
@@ -69,13 +71,39 @@ const Div = styled.div`
       opacity: 1;
     }
 
-    /* background: rgba(0, 0, 0, 0)
-        linear-gradient(to bottom, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0.8) 90%)
-        repeat 0 0; */
   }
 `
 
 const FloatingCard = ({ givenStyles, title, textSubTitle, mainText, url}) => {
+  useEffect(() => {
+    gsap.to(".menu__title", {
+      opacity: 1,
+      ease: "easeInOut",
+      duration: 1,
+      scrollTrigger: {
+        trigger: ".menu__title",
+        start: "top center",
+        end: "center center",
+        scrub: true,
+        toggleActions: "restart none none none",
+      },
+    })
+    gsap.to(".menu__text", {
+      opacity: 1,
+      delay: .5,
+      y: "10%",
+      duration: 2,
+      ease: "easeInOut",
+      scrollTrigger: {
+        trigger: ".menu__title",
+        start: "top center",
+        end: "center center",
+        scrub: true,
+        toggleActions: "restart none none none",
+        markers: true,
+      },
+    })
+  }, [])
   return (
     <Div style={givenStyles}>
       <div data-swiper-parallax="-200" className="menu__title">

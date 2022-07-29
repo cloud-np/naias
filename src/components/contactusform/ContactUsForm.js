@@ -129,7 +129,7 @@ const ContactUsForm = () => {
   }
 
   return (
-    <Section>
+    <Section id="contactUs">
       <h2>Πείτε μας για εσάς</h2>
       <div className="contactForm">
         <form id="contact-form" onSubmit={handleSubmit(onSubmit)} noValidate>

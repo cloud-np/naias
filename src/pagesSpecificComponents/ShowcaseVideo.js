@@ -3,6 +3,7 @@ import gsap from "gsap"
 import { Power3 } from "gsap"
 import styled from "styled-components"
 import { StaticImage } from "gatsby-plugin-image"
+import AnimatedBtn from "../components/animatedbtn/AnimatedBtn"
 import promo from "../assets/naias-promo.mp4"
 
 const ShowcaseVideoContainer = styled.article`
@@ -78,7 +79,7 @@ const ShowcaseVideoContainer = styled.article`
   }
 
   .arrow {
-    opacity: .7;
+    opacity: 0.7;
     width: 40px;
     height: 40px;
     top: 90%;
@@ -92,10 +93,10 @@ const ShowcaseVideoContainer = styled.article`
     animation: arrowIn 10s ease-in;
   }
   @keyframes arrowIn {
-    0%{
+    0% {
       opacity: 0;
     }
-    100%{
+    100% {
       opacity: 1;
     }
   }
@@ -124,6 +125,45 @@ const ShowcaseVideoContainer = styled.article`
       transform: translate(-10px, -10px);
     }
   }
+  
+  .left-text {
+    height: 500px;
+    margin-top: 1rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    font-family: var(--secondary-title-font);
+  }
+  .btns {
+    position: absolute;
+    top: 80%;
+    .btn {
+      padding: 10px 30px;
+      font-size: .7rem;
+      color: white;
+      border: 1px solid white;
+      background-color: transparent;
+      font-family: var(--secondary-title-font);
+      text-transform: uppercase;
+      text-decoration: none;
+      transition: all .5s ease-in-out;
+      :hover {
+        cursor: pointer;
+        background-color: #fff;
+        color: black;
+        box-shadow: 2px 4px 8px 2px rgba(117, 117, 117, 0.2), 6px 6px 100px 6px rgba(255, 255, 255, 0.99);
+      }
+    }
+  .active-btn {
+    background-color: #fff;
+    color: black;
+    :hover {
+      color: white;
+      background-color: transparent;
+    }
+  }
+
+
+}
 `
 
 const ShowcaseVideo = () => {
@@ -147,7 +187,6 @@ const ShowcaseVideo = () => {
         scrub: 5,
         start: "top 10%",
         end: "bottom 10%",
-        markers: true,
       },
       y: -60,
       opacity: 0,
@@ -155,34 +194,60 @@ const ShowcaseVideo = () => {
       ease: Power3.easeInOut,
       duration: 1,
     })
-    // gsap.to(".arrow", {
-    //   scrollBehavior: "smooth",
-    //   scrollTrigger: {
-    //     trigger: "#videoContainer",
-    //     scrub: 1,
-    //     start: "top 10%",
-    //     end: "bottom",
-    //   },
-    //   y: -140,
-    //   ease: Power3.easeInOut,
-    //   duration: 1,
-    // })
+    gsap.to(".arrow", {
+      scrollBehavior: "smooth",
+      scrollTrigger: {
+        trigger: "#videoContainer",
+        scrub: 1,
+        start: "top 10%",
+        end: "bottom",
+      },
+      opacity: 0,
+      ease: Power3.easeInOut,
+      duration: 1,
+    })
+
+    gsap.to(".btns", {
+      scrollBehavior: "smooth",
+      scrollTrigger: {
+        trigger: "#videoContainer",
+        scrub: 1,
+        start: "top 10%",
+        end: "bottom",
+      },
+      opacity: 0,
+      scale: 1.5,
+      ease: Power3.easeInOut,
+      duration: 1,
+    })
   }, [])
+  const scrollTo = (elID) => {
+    document.getElementById(elID).scrollIntoView()
+  }
   return (
     <ShowcaseVideoContainer>
       <figure id="videoContainer" className="animateUpwards">
         <video src={promo} type="video/mp4" autoPlay loop muted></video>
       </figure>
       <section className="mainText">
-        <StaticImage
-          src={"../static/naias-logo-golden.png"}
-          alt="Kthma Naias logo"
-          formats={["auto", "webp", "avif"]}
-          className="logo fade-in-with-scale"
-        />
-        {/* <h3 className="showcase_content__undertext fade-in"> */}
-        <h3 className="fade-in">We make a day to remember</h3>
+        {/* <h5 className="left-text">Κτήμα Ναϊάς EST - {new Date().getFullYear()}</h5> */}
+        <div>
+          <StaticImage
+            src={"../static/naias-logo-golden.png"}
+            alt="Kthma Naias logo"
+            formats={["auto", "webp", "avif"]}
+            className="logo fade-in-with-scale"
+          />
+          {/* <h3 className="showcase_content__undertext fade-in"> */}
+          <h3 className="fade-in">We make a day to remember</h3>
+        </div>
       </section>
+      <div className="btns">
+        <button className="btn" onClick={() => scrollTo("dreamIt")}>Dream It</button>
+        <button className="btn active-btn" onClick={() => scrollTo("contactUs")}>Live It</button>
+        <button className="btn" onClick={() => scrollTo("loveIt")}>Love It</button>
+      </div>
+      {/* <h5 className="left-text">Κτήμα Ναϊάς EST - {new Date().getFullYear()}</h5> */}
       <div className="arrow"></div>
     </ShowcaseVideoContainer>
   )

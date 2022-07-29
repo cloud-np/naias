@@ -48,7 +48,7 @@ const Section = styled.nav`
 const LoveIt = () => {
   const carouselPhotos = [{ photo: aithousa, alt: "Αίθουσα" }]
   return (
-    <Section>
+    <Section id="loveIt">
       <Categories />
       <h4 className="content__subtitle">LOVE IT</h4>
       <h1 className="Love-it__title">#ktimanaias</h1>
